@@ -1,0 +1,167 @@
+<header>
+    <!--=======  header top  =======-->
+
+    <div class="header-top pt-10 pb-10 pt-lg-10 pb-lg-10 pt-md-10 pb-md-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center text-sm-start">
+                    <!-- currncy language dropdown -->
+                    <div class="lang-currency-dropdown">
+                        <ul>
+                            <li> <a href="#">English <i class="fa fa-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="#">Vietnamese</a></li>
+                                    <li><a href="#">Japanease</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">VND <i class="fa fa-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="#">$</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end of currncy language dropdown -->
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  text-center text-sm-end">
+                    <!-- header top menu -->
+                    <div class="header-top-menu">
+                        <ul>
+                            <li><a href="my-account.html">My account</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </div>
+                    <!-- end of header top menu -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--=======  End of header top  =======-->
+
+    <!--=======  header bottom  =======-->
+
+    <div class="header-bottom header-bottom-one header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12 text-lg-start text-md-center text-sm-center">
+                    <!-- logo -->
+                    <div class="logo mt-15 mb-15">
+                        <a href="index.html">
+                            <img width="111" height="111" src="assets/images/logo.png" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                    <!-- end of logo -->
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div
+                        class="menubar-top d-flex justify-content-between align-items-center flex-sm-wrap flex-md-wrap flex-lg-nowrap mt-sm-15">
+                        <!-- header phone number -->
+                        <div class="header-contact d-flex">
+                            <div class="phone-icon">
+                                <img width="40" height="35" src="assets/images/icon-phone.webp" class="img-fluid" alt="">
+                            </div>
+                            <div class="phone-number">
+                                Phone: <span class="number">0338133743</span>
+                            </div>
+                        </div>
+                        <!-- end of header phone number -->
+                        <!-- search bar -->
+                        <div class="header-advance-search">
+                            <form action="#">
+                                <input type="text" placeholder="Tìm kiếm sản phẩm">
+                                <button><span class="icon_search"></span></button>
+                            </form>
+                        </div>
+                        <!-- end of search bar -->
+                        <!-- shopping cart -->
+                        <div class="shopping-cart" id="shopping-cart">
+                            <a routerLink="cart">
+                                <div class="cart-icon d-inline-block">
+                                    <span class="icon_bag_alt"></span>
+                                </div>
+                                <div class="cart-info d-inline-block">
+                                    <p><i style='font-size:24px' class='fas'>&#xf07a;</i>  Giỏ hàng
+                                        <span>
+                                            0 items 
+                                        </span>
+                                    </p>
+                                </div>
+                            </a>
+                            <!-- end of shopping cart -->
+
+                            <!-- cart floating box -->
+                            <div class="cart-floating-box" id="cart-floating-box">
+                                <div class="cart-items">
+                                    <div class="cart-float-single-item d-flex">
+                                        <span class="remove-item"><a href="#"><i class="fa fa-times"></i></a></span>
+                                        <div class="cart-float-single-item-image">
+                                            <a href="single-product.html"><img width="350" height="350" src="assets/images/products/product01.webp" class="img-fluid"
+                                                    alt=""></a>
+                                        </div>
+                                        <div class="cart-float-single-item-desc">
+                                            <p class="product-title"> <a href="single-product.html">Duis pulvinar obortis eleifend </a></p>
+                                            <p class="price"><span class="count">1x</span> $20.50</p>
+                                        </div>
+                                    </div>
+                                    <div class="cart-float-single-item d-flex">
+                                        <span class="remove-item"><a href="#"><i class="fa fa-times"></i></a></span>
+                                        <div class="cart-float-single-item-image">
+                                            <a href="single-product.html"><img width="350" height="350" src="assets/images/products/product02.webp" class="img-fluid"
+                                                    alt=""></a>
+                                        </div>
+                                        <div class="cart-float-single-item-desc">
+                                            <p class="product-title"> <a href="single-product.html">Fusce ultricies dolor vitae</a></p>
+                                            <p class="price"><span class="count">1x</span> $20.50</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-calculation">
+                                    <div class="calculation-details">
+                                        <p class="total">Thành tiền <span>$22</span></p>
+                                    </div>
+                                    <div class="floating-cart-btn text-center">
+                                        <a href="checkout.html">Thanh toán</a>
+                                        <a href="cart.html">Xem giỏ hàng</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of cart floating box -->
+                        </div>
+                    </div>
+
+                    <!-- navigation section -->
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li ><a routerLink="home" style="color: black;">Trang chủ</a>
+                                </li>
+                                <li class="menu-item-has-children"><a href="shop-left-sidebar.html">Loại sản phẩm</a>
+                                    <ul class="sub-menu">
+                                        <ng-container *ngFor="let m of menus">
+                                            <li><a href = "" >{{m.tenLoai}}</a></li>
+                                        </ng-container> 
+                                    </ul>
+                                </li>
+
+                               <li ><a routerLink="blog">Tin tức</a>
+
+                                </li>
+                                <li><a routerLink="contact">Liên hệ</a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- end of navigation section -->
+                </div>
+                <div class="col-12">
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu d-block d-lg-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--=======  End of header bottom  =======-->
+</header>

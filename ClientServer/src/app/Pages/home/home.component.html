@@ -1,0 +1,493 @@
+
+
+<!-- =            Hero slider Area         =
+	=============================================--> 
+
+	<div class="hero-slider-container mb-35">
+		<!--=======  Slider area  =======-->
+
+		<div class="hero-slider-one">
+			<!--=======  hero slider item  =======-->
+
+			<div class="hero-slider-item slider-bg-1">
+				<div class="slider-content d-flex flex-column justify-content-center align-items-center">
+					<h1>CPMart</h1>
+					<p>get fresh food from our firm to your table</p>
+					<a href="shop-left-sidebar.html" class="slider-btn">SHOP NOW</a>
+				</div>
+			</div>
+
+			<!--=======  End of hero slider item  =======-->
+
+
+			<!--=======  Hero slider item  =======-->
+
+			<div class="hero-slider-item slider-bg-2">
+				<div class="slider-content d-flex flex-column justify-content-center align-items-center">
+					<h1>Fresh & Nature</h1>
+					<p>get fresh food from our firm to your table</p>
+					<a href="shop-left-sidebar.html" class="slider-btn">SHOP NOW</a>
+				</div>
+			</div>
+
+			<!--=======  End of Hero slider item  =======-->
+
+		</div>
+
+		<!--=======  End of Slider area  =======-->
+
+	</div>
+
+	<!--=====  End of Hero slider Area  ======-->
+
+
+
+	<!--=============================================
+	=            Policy area         =
+	=============================================-->
+
+	<div class="policy-section mb-35">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="policy-titles d-flex align-items-center flex-wrap">
+						<!--=======  single policy  =======-->
+
+						<div class="single-policy">
+							<span><img width="30" height="25" src="assets/images/policy-icon1.webp" class="img-fluid" alt=""></span>
+							<p>MIỄN PHÍ SHIP</p>
+						</div>
+
+						<!--=======  End of single policy  =======-->
+
+
+						<!--=======  single policy  =======-->
+
+						<div class="single-policy">
+							<span><img width="30" height="29" src="assets/images/policy-icon2.webp" class="img-fluid" alt=""></span>
+							<p>30 NGÀY HOÀN TIỀN</p>
+						</div>
+
+						<!--=======  End of single policy  =======-->
+
+						<!--=============================================
+						=            single policy         =
+						=============================================-->
+
+						<div class="single-policy">
+							<span><img width="30" height="29" src="assets/images/policy-icon3.webp" class="img-fluid" alt=""></span>
+							<p> HỖ TRỢ 24/7</p>
+						</div>
+
+						<!--=====  End of single policy  ======-->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--=====  End of Policy area  ======-->
+
+	<!--=============================================
+	=            category slider         =
+	=============================================-->
+
+
+
+	<!--=====  End of category slider  ======-->
+
+	<!--=============================================
+	=            Tab slider         =
+	=============================================-->
+
+	<div class="slider tab-slider mb-35">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="tab-slider-wrapper">
+						<nav>
+							<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<a *ngFor="let lsp of datalsp" class="nav-item nav-link " id="featured-tab" data-bs-toggle="tab"  role="tab"
+									aria-selected="true" (click)="showsp(lsp.maLoaiSp)">{{lsp.tenLoai}}</a>
+				
+							</div>
+						</nav>
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab" >
+								<!--=======  tab slider container  =======-->
+
+								<div class="tab-slider-container">
+									<!--=======  single tab slider item  =======-->
+									<div class="single-tab-slider-item"  >
+										
+
+										<div class="gf-product tab-slider-sub-product"  *ngFor="let sp of datasp" >
+											<div class="image">
+												<a [routerLink]="['/product-detail',sp.maSp]">
+													<img width="350" height="350" src="assets/images/anh/{{sp.hinhAnh}}" class="img-fluid" alt="">
+												</a>
+												<div class="product-hover-icons">
+													<a class="active" href="#" data-tooltip="Add to cart"> <span class="icon_cart_alt"></span></a>
+													<a href="#" data-tooltip="Add to wishlist"> <span class="icon_heart_alt"></span> </a>
+													<a href="#" data-tooltip="Compare"> <span class="arrow_left-right_alt"></span> </a>
+													<a href="#" data-tooltip="Quick view" data-bs-toggle="modal"
+														data-bs-target="#quick-view-modal-container"> <span class="icon_search"></span> </a>
+												</div>
+											</div>
+											
+												<h3 class="product-title"><a [routerLink]="['/product-detail',sp.maSp]">{{sp.tenSp}}</a></h3>
+												<div class="price-box">
+													<span class="discounted-price" style="color: red;">{{sp.dongia}}</span>
+												</div>
+											</div>
+
+										</div>
+						
+									
+
+									</div>
+								
+								</div>
+
+								<!--=======  End of tab slider container  =======-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	<!--=====  End of Tab slider  ======-->
+
+	<!--=============================================
+	=            Featured product image gallery         =
+	=============================================-->
+
+	<div class="featured-product-image-gallery mb-80 pt-120 section-bg" style="margin-top: 20px">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!--=======  gallery product container  =======-->
+					<div class="gallery-product-container">
+						<div class="row no-gutters">
+							<div class="col-lg-4 col-sm-6">
+								<!--=======  single featured product  =======-->
+
+								<div class="single-featured-product">
+									<a href="single-product.html">
+										<img width="390" height="229" src="assets/images/product-banners/fullbanner-1.webp" class="img-fluid" alt="">
+									</a>
+								</div>
+
+								<!--=======  End of single featured product  =======-->
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<!--=======  single featured product  =======-->
+
+								<div class="single-featured-product">
+									<a href="single-product.html">
+										<img width="390" height="229" src="assets/images/product-banners/fullbanner-2.webp" class="img-fluid" alt="">
+									</a>
+								</div>
+
+								<!--=======  End of single featured product  =======-->
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<!--=======  single featured product  =======-->
+
+								<div class="single-featured-product">
+									<a href="single-product.html">
+										<img width="390" height="229" src="assets/images/product-banners/fullbanner-3.webp" class="img-fluid" alt="">
+									</a>
+								</div>
+
+								<!--=======  End of single featured product  =======-->
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<!--=======  single featured product  =======-->
+
+								<div class="single-featured-product">
+									<a href="single-product.html">
+										<img width="390" height="229" src="assets/images/product-banners/fullbanner-4.webp" class="img-fluid" alt="">
+									</a>
+								</div>
+
+								<!--=======  End of single featured product  =======-->
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<!--=======  single featured product  =======-->
+
+								<div class="single-featured-product">
+									<a href="single-product.html">
+										<img width="390" height="229" src="assets/images/product-banners/fullbanner-5.webp" class="img-fluid" alt="">
+									</a>
+								</div>
+
+								<!--=======  End of single featured product  =======-->
+							</div>
+							<div class="col-lg-4 col-sm-6">
+								<!--=======  single featured product  =======-->
+
+								<div class="single-featured-product">
+									<a href="single-product.html">
+										<img width="390" height="229" src="assets/images/product-banners/fullbanner-6.webp" class="img-fluid" alt="">
+									</a>
+								</div>
+
+								<!--=======  End of single featured product  =======-->
+							</div>
+						</div>
+					</div>
+
+					<!--=======  End of gallery product container  =======-->
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--=====  End of Featured product image gallery  ======-->
+
+	<!--=============================================
+	=            Sale product slider         =
+	=============================================-->
+
+	<div class="sale-single-product-section mb-35" style="margin-top:70px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-big-title text-center mb-30">
+						<h2>Giảm giá 40% <span>DEAL HOT</span></h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<!--=======  sale single product container  =======-->
+
+					<div class="sale-single-product-container">
+						<!--=======  sale single product  =======-->
+
+						<div class="sale-single-product">
+							<div class="product-countdown" data-countdown="2022/01/01"></div>
+							<div class="row">
+								<div class="col-lg-4 offset-lg-2 col-md-12">
+									<!--=======  sale single product image  =======-->
+
+									<div class="image text-md-center">
+										<a href="single-product.html">
+											<span class="onsale">Sale!</span>
+											<img width="350" height="350" src="assets/images/products/product01.webp" class="img-fluid" alt="">
+										</a>
+										<div class="product-hover-icons">
+											<a href="#" data-tooltip="Quick view" data-bs-toggle="modal"
+												data-bs-target="#quick-view-modal-container"> <span class="icon_search"></span> </a>
+										</div>
+									</div>
+
+									<!--=======  End of sale single product image  =======-->
+								</div>
+								<div class="col-lg-6 col-md-12">
+									<!--=======  sale single product content  =======-->
+
+									<div class="sale-single-product-content text-center">
+										<h2 class="product-title"><a href="single-product.html">Bí ngòi Thái Lan</a></h2>
+										<h2 class="price"> <span class="main-price">52000</span> <span
+												class="discounted-price">30000</span></h2>
+										<p class="product-description">
+											Bí ngòi là trái cây thuộc loại họ nhà bầu bí, thân tròn, dài, bên ngoài vỏ bí có màu xanh bắt mắt. Bí ngòi là một loại rau củ sạch  chứa hàm lượng dinh dưỡng cao nhưng lại ít calo và rất dễ trồng.
+										</p>
+										<a href="#" class="single-sale-add-to-cart-btn">add to cart</a>
+									</div>
+
+									<!--=======  End of sale single product content  =======-->
+								</div>
+							</div>
+						</div>
+
+						<!--=======  End of sale single product  =======-->
+						<!--=======  sale single product  =======-->
+
+					
+
+						<!--=======  End of sale single product  =======-->
+					</div>
+
+					<!--=======  End of sale single product container  =======-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--=====  End of Sale product slider  ======-->
+
+	<!--=============================================
+	=            Best seller slider         =
+	=============================================-->
+
+
+	<!--=====  End of Best seller slider  ======-->
+
+	<!--=============================================
+	=            Blog post slider container         =
+	=============================================-->
+
+	<div class="slider blog-slider mb-35" style="margin-top:40px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!--=======  blog slider section title  =======-->
+
+					<div class="section-title">
+						<h3>TIN TỨC</h3>
+					</div>
+
+					<!--=======  End of blog slider section title  =======-->
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<!--=======  blog slide container  =======-->
+
+					<div class="blog-slider-container pt-30 pb-30 pr-30 pl-30">
+
+						<!--=======  single blog post  =======-->
+						<div class="col">
+							<div class="single-post-wrapper" *ngFor="let tin of blogs">
+								<div class="post-thumb">
+									<a href="blog-post-image-format.html">
+										<img width="500" height="300" src="assets/images/anh/{{tin.hinhAnh}}" class="img-fluid" alt="">
+									</a>
+								</div>
+								<div class="post-info">
+									<div class="post-meta">
+										<div class="post-date">{{tin.ngayDang| date}}</div>
+									</div>
+									<h3 class="post-title"><a href="blog-post-image-format.html">{{tin.tieuDe}}</a></h3>
+									<a href="blog-post-image-format.html" class="readmore-btn">continue <i
+											class="fa fa-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<!--=======  End of single blog post  =======-->
+
+						<!--=======  single blog post  =======-->
+				
+
+						<!--=======  End of single blog post  =======-->
+
+					</div>
+
+					<!--=======  End of blog slide container  =======-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--=====  End of Blog post slider  ======-->
+
+
+	<!--=============================================
+	=            Brand logo slider         =
+	=============================================-->
+
+	<div class="slider brand-logo-slider mb-35"style="margin-top:20px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!--=======  blog slider section title  =======-->
+
+					<div class="section-title">
+						<h3>LOGOS</h3>
+					</div>
+
+					<!--=======  End of blog slider section title  =======-->
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<!--=======  brand logo wrapper  =======-->
+
+					<div class="brand-logo-wrapper pt-20 pb-20">
+
+						<!--=======  single-brand-logo  =======-->
+
+						<div class="col">
+							<div class="single-brand-logo">
+								<a href="#">
+									<img width="186" height="92" src="assets/images/brands/brand1.webp" class="img-fluid" alt="">
+								</a>
+							</div>
+						</div>
+
+						<!--=======  End of single-brand-logo  =======-->
+						<!--=======  single-brand-logo  =======-->
+
+						<div class="col">
+							<div class="single-brand-logo">
+								<a href="#">
+									<img width="186" height="92" src="assets/images/brands/brand2.webp" class="img-fluid" alt="">
+								</a>
+							</div>
+						</div>
+
+						<!--=======  End of single-brand-logo  =======-->
+						<!--=======  single-brand-logo  =======-->
+
+						<div class="col">
+							<div class="single-brand-logo">
+								<a href="#">
+									<img width="186" height="92" src="assets/images/brands/brand3.webp" class="img-fluid" alt="">
+								</a>
+							</div>
+						</div>
+
+						<!--=======  End of single-brand-logo  =======-->
+						<!--=======  single-brand-logo  =======-->
+
+						<div class="col">
+							<div class="single-brand-logo">
+								<a href="#">
+									<img width="186" height="92" src="assets/images/brands/brand4.webp" class="img-fluid" alt="">
+								</a>
+							</div>
+						</div>
+
+						<!--=======  End of single-brand-logo  =======-->
+						<!--=======  single-brand-logo  =======-->
+
+						<div class="col">
+							<div class="single-brand-logo">
+								<a href="#">
+									<img width="186" height="92" src="assets/images/brands/brand5.webp" class="img-fluid" alt="">
+								</a>
+							</div>
+						</div>
+
+						<!--=======  End of single-brand-logo  =======-->
+						<!--=======  single-brand-logo  =======-->
+
+						<div class="col">
+							<div class="single-brand-logo">
+								<a href="#">
+									<img width="186" height="92" src="assets/images/brands/brand6.webp" class="img-fluid" alt="">
+								</a>
+							</div>
+						</div>
+
+						<!--=======  End of single-brand-logo  =======-->
+					</div>
+
+					<!--=======  End of brand logo wrapper  =======-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--=====  End of Brand logo slider  ======-->

@@ -1,0 +1,18 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 06 Oct 2021 10:12:25 at http://pixelwibes.com/template/ebazar/html/dist/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://pixelwibes.com/template/ebazar/html/dist/index.html -O1 "D:\Angular\DOAN5\Template\Admin" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+10:16:25	Warning: 	Retry after error -4 (Incorrect length (926828 Bytes, 1094407 expected)) at link pixelwibes.com/template/ebazar/html/dist/assets/fonts/icofont/fonts/icofont.eot (from pixelwibes.com/template/ebazar/html/dist/assets/css/ebazar.style.min.css)
+10:16:25	Warning: 	Retry after error -4 (Incorrect length (925431 Bytes, 1094407 expected)) at link pixelwibes.com/template/ebazar/html/dist/assets/fonts/icofont/fonts/icofont.eot? (from pixelwibes.com/template/ebazar/html/dist/assets/css/ebazar.style.min.css)
+10:16:25	Warning: 	Retry after error -4 (Incorrect length (531294 Bytes, 645604 expected)) at link pixelwibes.com/template/ebazar/html/dist/assets/fonts/icofont/fonts/icofont.woff (from pixelwibes.com/template/ebazar/html/dist/assets/css/ebazar.style.min.css)
+10:16:44	Error: 	"Not Found" (404) at link pixelwibes.com/template/ebazar/html/dist/cropped.jpg (from pixelwibes.com/template/ebazar/html/dist/product-edit.html)
+10:17:18	Error: 	"Not Found" (404) at link pixelwibes.com/template/ebazar/html/dist/ui-elements/admin-profile.html (from pixelwibes.com/template/ebazar/html/dist/ui-elements/ui-card.html)
+10:17:18	Error: 	"Not Found" (404) at link pixelwibes.com/template/ebazar/html/dist/ui-elements/order-invoices.html (from pixelwibes.com/template/ebazar/html/dist/ui-elements/ui-card.html)
+10:17:18	Error: 	"Not Found" (404) at link pixelwibes.com/template/ebazar/html/dist/ui-elements/ui-elements/auth-signin.html (from pixelwibes.com/template/ebazar/html/dist/ui-elements/ui-card.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 4 minutes 53 seconds : 182 links scanned, 173 files written (15635338 bytes overall) [9830363 bytes received at 33550 bytes/sec], 6810164 bytes transferred using HTTP compression in 96 files, ratio 13%, 4.5 requests per connection
+(4 errors, 3 warnings, 0 messages)
