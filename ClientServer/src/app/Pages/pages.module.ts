@@ -6,11 +6,12 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 import { BlogComponent } from './blog/blog.component';
 import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent],
+  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -31,6 +32,10 @@ import { ContactComponent } from './contact/contact.component';
       {
         path: 'blog',
         component: BlogComponent
+      },
+      {
+        path: 'blog-detail/:id',
+        component: BlogDetailComponent
       },
       {
         path: 'cart',

@@ -278,7 +278,8 @@ namespace API.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        //tìm kiếm.
+        
+        // Phân trang
         [Route("get-all-paginate")]
         [HttpPost]
         public IActionResult GetAllPaginate([FromBody] Dictionary<string, object> formData)
