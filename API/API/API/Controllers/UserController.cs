@@ -28,7 +28,7 @@ namespace API.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [AllowAnonymous]
+        [Authorize]
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] User model)
         {

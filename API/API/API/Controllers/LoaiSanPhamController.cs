@@ -1,7 +1,9 @@
 ﻿using API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using ShopVT.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,8 @@ namespace API.Controllers
             try
             {
                 var result = db.LoaiSanPhams.Select(s => new { text = s.TenLoai, value = s.MaLoaiSp }).ToList();
+               
+               
                 return Ok(result);
             }
             catch (Exception ex)
@@ -84,6 +88,8 @@ namespace API.Controllers
         //thêm loại sản phẩm
         [Route("create-loai")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCTCATEGORY, ClaimAction.CANCREATE)]
         public IActionResult CreateItem([FromBody] LoaiSanPham model)
         {
             model.MaLoaiSp = Guid.NewGuid().ToString();
@@ -93,6 +99,8 @@ namespace API.Controllers
         }
         [Route("create-loai1")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCTCATEGORY, ClaimAction.CANCREATE)]
         public IActionResult CreateItem1([FromBody] LoaiSanPham model)
         {
             //model.MaLoai = Guid.NewGuid().ToString();
@@ -104,6 +112,8 @@ namespace API.Controllers
         //sửa loại sản phẩm
         [Route("update-loai")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCTCATEGORY, ClaimAction.CANUPDATE)]
         public IActionResult UpdateItem([FromBody] LoaiSanPham model)
         {
             var obj = db.LoaiSanPhams.Where(s => s.MaLoaiSp == model.MaLoaiSp).SingleOrDefault();
@@ -117,6 +127,8 @@ namespace API.Controllers
         }
         [Route("update-loai1/{id}")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCTCATEGORY, ClaimAction.CANUPDATE)]
         public IActionResult UpdateItem1([FromBody] LoaiSanPham model, string id)
         {
             var obj = db.LoaiSanPhams.Where(s => s.MaLoaiSp == id).SingleOrDefault();
@@ -132,6 +144,8 @@ namespace API.Controllers
         //xóa loai sản phẩm
         [Route("delete-lsp/{id}")]
         [HttpDelete]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCTCATEGORY, ClaimAction.CANDELETE)]
         public IActionResult Delete1Item(string id)
         {
             var obj = db.LoaiSanPhams.Where(s => s.MaLoaiSp == id).SingleOrDefault();
@@ -142,6 +156,8 @@ namespace API.Controllers
 
         [Route("update1-loai")]
         [HttpPut]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCTCATEGORY, ClaimAction.CANUPDATE)]
         public IActionResult UpdateItem1([FromBody] LoaiSanPham model)
         {
             var obj = db.LoaiSanPhams.Where(s => s.MaLoaiSp == model.MaLoaiSp).SingleOrDefault();
@@ -155,6 +171,8 @@ namespace API.Controllers
         //xóa loại sản phẩm
         [Route("delete-loaisanpham1")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCTCATEGORY, ClaimAction.CANDELETE)]
         public IActionResult DeleteLoaiSanPham([FromBody] Dictionary<string, object> formData)
         {
             string maloai = "";

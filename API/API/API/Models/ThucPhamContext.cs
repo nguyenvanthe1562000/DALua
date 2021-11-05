@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
+using Model.Model;
 
 #nullable disable
 
@@ -9,7 +10,7 @@ namespace API.Models
 {
     public partial class ThucPhamContext : DbContext
     {
-        
+
         private string StrConnection;
         public ThucPhamContext(IConfiguration configuration)
         {
@@ -31,6 +32,12 @@ namespace API.Models
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }
         public virtual DbSet<User> Users { get; set; }
+
+        public virtual DbSet<UserPermisionModel> UserPermision { get; set; }
+        public virtual DbSet<PermisionModel> Permision { get; set; }
+        public virtual DbSet<PermisionDetailModel> PermisionDetail { get; set; }
+        public virtual DbSet<Function> Function { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -122,18 +129,18 @@ namespace API.Models
 
                 entity.ToTable("DangNhap_Admin");
 
-                entity.Property(e => e.Acc)
+                entity.Property(e => e.username)
                     .HasMaxLength(20)
-                    .HasColumnName("acc");
+                    .HasColumnName("username");
 
                 entity.Property(e => e.Id)
                     .HasMaxLength(10)
                     .IsUnicode(false)
                     .HasColumnName("id");
 
-                entity.Property(e => e.Pass)
+                entity.Property(e => e.PassWord)
                     .HasMaxLength(20)
-                    .HasColumnName("pass");
+                    .HasColumnName("PassWord");
 
                 entity.Property(e => e.Tenad)
                     .HasMaxLength(20)
@@ -351,7 +358,22 @@ namespace API.Models
                     .HasMaxLength(20)
                     .HasColumnName("ten");
             });
-
+            modelBuilder.Entity<Function>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+            });
+            modelBuilder.Entity<PermisionModel>(entity =>
+            {
+                entity.HasKey(e => e.ID);
+            });
+            modelBuilder.Entity<PermisionDetailModel>(entity =>
+          {
+              entity.HasKey(e => e.ID);
+          });
+            modelBuilder.Entity<UserPermisionModel>(entity =>
+           {
+               entity.HasKey(e => e.ID);
+           });
             OnModelCreatingPartial(modelBuilder);
         }
 

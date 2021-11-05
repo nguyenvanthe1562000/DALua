@@ -9,7 +9,10 @@ namespace API.Models
     {
         public string Id { get; set; }
         public string Tenad { get; set; }
-        public string Acc { get; set; }
-        public string Pass { get; set; }
+
+        public string username { set; get; }
+        public string PassWord { set; get; }
+        public bool IsActive { set; get; }
+        public string Code { set; get; }
     }
 }

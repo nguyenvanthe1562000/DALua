@@ -1,7 +1,9 @@
 ﻿using API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using ShopVT.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -152,6 +154,8 @@ namespace API.Controllers
         //thêm sản phẩm
         [Route("create-item")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCT, ClaimAction.CANCREATE)]
         public IActionResult CreateItem([FromBody] SanPham model)
         {
             db.SanPhams.Add(model);
@@ -162,6 +166,8 @@ namespace API.Controllers
         //sửa sản phẩm
         [Route("update-item")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCT, ClaimAction.CANUPDATE)]
         public IActionResult UpdateItem([FromBody] SanPham model)
         {
             var obj = db.SanPhams.Where(s => s.MaSp == model.MaSp).SingleOrDefault();
@@ -184,6 +190,8 @@ namespace API.Controllers
         }
         [Route("update-item1/{id}")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCT, ClaimAction.CANUPDATE)]
         public IActionResult UpdateItem1([FromBody] SanPham model, string id)
         {
             var obj = db.SanPhams.Where(s => s.MaSp == id).SingleOrDefault();
@@ -207,6 +215,8 @@ namespace API.Controllers
 
         [Route("update1-item")]
         [HttpPut]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCT, ClaimAction.CANUPDATE)]
         public IActionResult UpdateItem1([FromBody] SanPham model)
         {
             var obj = db.SanPhams.Where(s => s.MaSp == model.MaSp).SingleOrDefault();
@@ -238,6 +248,8 @@ namespace API.Controllers
         }
         [Route("delete-sanpham1")]
         [HttpPost]
+        [Authorize]
+        [ClaimRequirement(ClaimFunction.PRODUCT, ClaimAction.CANDELETE)]
         public IActionResult DeleteSanPham([FromBody] Dictionary<string, object> formData)
         {
             string masp = "";

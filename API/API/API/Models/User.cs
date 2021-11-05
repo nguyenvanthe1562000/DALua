@@ -9,9 +9,10 @@ namespace API.Models
     {
         public string Id { get; set; }
         public string Ten { get; set; }
-        public string Acc { get; set; }
-        public string Pass { get; set; }
+        public string Acc { set; get; }
+        public string Pass { set; get; }
         public string Sdt { get; set; }
         public string Diachi { get; set; }
+
     }
 }
