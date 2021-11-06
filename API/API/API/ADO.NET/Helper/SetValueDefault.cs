@@ -25,20 +25,20 @@ namespace Common.Helper
                             if ( item.GetValue(setObjValue) == null)
                             {
                                 //var type = 
-                               
 
-                                //if (item.PropertyType == Type.GetType("System.DateTime"))
-                                //{
-                                //    pro.SetValue(_obj, DateTime.MinValue, null);
-                                //}
-                                //else if (item.PropertyType == Type.GetType("System.String"))
-                                //{
-                                //    pro.SetValue(_obj, "", null);
-                                //}
-                                //else
-                                //{
+
+                                    //if (item.PropertyType == Type.GetType("System.DateTime"))
+                                    //{
+                                    //    pro.SetValue(_obj, DateTime.MinValue, null);
+                                    //}
+                                 if (item.PropertyType == Type.GetType("System.String"))
+                                {
+                                    pro.SetValue(_obj, string.Empty, null);
+                                }
+                                else
+                                {
                                     pro.SetValue(_obj, Activator.CreateInstance(item.PropertyType), null);
-                                //}
+                                }
                             }
                            
                             else

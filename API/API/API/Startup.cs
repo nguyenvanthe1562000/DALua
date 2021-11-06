@@ -64,6 +64,9 @@
 //    }
 //}
 
+using Common.Helper;
+using Data.Repository;
+using Data.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -101,6 +104,8 @@ namespace API
             services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(Configuration);
+            services.AddSingleton<ILoginAdminRepository, LoginAdminRepository>();
+            services.AddSingleton<IDatabaseHelper, DatabaseHelper>();
             //services.AddSwaggerGen(c =>
             //{
             //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuanLyBanDoGiaDung_API", Version = "v1" });
@@ -115,7 +120,7 @@ namespace API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "QuanLyBanDoGiaDung_API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
             }
             app.UseCors(x => x
                         .AllowAnyOrigin()
@@ -125,7 +130,7 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

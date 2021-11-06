@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using Common.Helper;
 using Data.Repository.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -40,11 +41,12 @@ namespace API.Controllers
             try
             {
                 var result = await _iLoginAdmin.Login(model);
-                string token = await GenerateJSONWebToken(result);
+                var identity= SetObjectValueDefault.SetValueDefault<IdentityModel>(result);
+                string token = await GenerateJSONWebToken(await identity);
 
                 return Ok(new { token });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

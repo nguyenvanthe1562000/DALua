@@ -42,24 +42,24 @@ public class ClaimRequirementFilter : IAuthorizationFilter
             {
                 if (roles.Exists(c => c.CanCreate == _claim.Value))
                 {
-                    context.Result = new ForbidResult();
+                    return;
 
                 }
                 else if (roles.Exists(c => c.CanRead == _claim.Value))
                 {
-                    context.Result = new ForbidResult();
+                    return;
                 }
                 else if (roles.Exists(c => c.CanUpdate == _claim.Value))
                 {
-                    context.Result = new ForbidResult();
+                    return;
                 }
                 else if (roles.Exists(c => c.CanDelete == _claim.Value))
                 {
-                    context.Result = new ForbidResult();
+                    return;
                 }
                 else //if (roles.Exists(c => c.CanReport == _claim.Value))
                 {
-                    context.Result = new ForbidResult();
+                    context.Result = new ForbidResult("Bạn Không đủ quyền, Liên hệ admin để cấp quyền");
                 }
 
             }

@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,7 @@ namespace API.Controllers
         }
         [Route("get-all")]
         [HttpGet]
+        [Authorize]
         public IActionResult GetAll()
         {
             try

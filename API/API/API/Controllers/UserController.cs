@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Authorize]
+   
     [Route("api/user")]
     public class UserController : Controller
     {
@@ -28,7 +28,7 @@ namespace API.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [Authorize]
+       
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] User model)
         {

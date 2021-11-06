@@ -14,12 +14,12 @@ namespace Common.Helper
         public string StrConnection { get; set; }
         //Connection
         public SqlConnection sqlConnection { get; set; }
-        //NpgsqlTransaction 
+        //NpgsqlTransaction e
         public SqlTransaction sqlTransaction { get; set; }
 
         public DatabaseHelper(IConfiguration configuration)
         {
-            StrConnection = configuration["ConnectionStrings:DefaultConnection"];
+            StrConnection = configuration["SQLServer:ConnectionString"];
         }
         /// <summary>
         /// Set Connection String

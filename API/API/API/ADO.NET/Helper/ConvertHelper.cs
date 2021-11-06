@@ -37,18 +37,10 @@ namespace Common.Helper
                         if (string.IsNullOrEmpty(dr[column.ColumnName].ToString()))
                         {
 
-                            if (column.DataType == Type.GetType("System.DateTime"))
-                            {
-                                pro.SetValue(obj, DateTime.MinValue, null);
-                            }
-                            else if (column.DataType == Type.GetType("System.String"))
-                            {
-                                pro.SetValue(obj, "", null);
-                            }
-                            else
-                            {
+                         
+                           
                                 pro.SetValue(obj, default, null);
-                            }
+                            
 
                         }
                         else
