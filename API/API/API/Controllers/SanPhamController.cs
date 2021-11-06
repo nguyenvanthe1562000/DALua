@@ -25,7 +25,8 @@ namespace API.Controllers
         {
             try
             {
-                var result = db.SanPhams.ToList();
+                var result = db.SanPhams.OrderByDescending(o => o.MaSp).Take(10).ToList();
+
                 return Ok(result);
             }
             catch (Exception ex)
