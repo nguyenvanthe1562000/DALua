@@ -6,5 +6,8 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+<<<<<<< HEAD
 build_property.RootNamespace = API
 build_property.ProjectDir = C:\Users\nguye\source\repos\DALua\API\API\API\
+=======
+>>>>>>> 4193252c8ffb4313ead6acbf29bc6d99e6c2187a

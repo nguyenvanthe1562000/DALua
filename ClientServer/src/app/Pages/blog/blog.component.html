@@ -1,88 +1,117 @@
-<div class="blog-page-container mb-50">
+ <!-- Breadcrumb Start -->
+ <div class="breadcrumb-area mt-30">
     <div class="container">
-        <div class="row">
-
-            <div class="col-lg-12">
-                <!--=======  blog post container  =======-->
-
-                <div class="blog-post-container">
-
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs">
-                            <!--=======  single blog post  =======-->
-
-                            <div class="single-blog-post mb-35">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="single-blog-post-media mb-20">
-                                            <div class="image">
-                                                <a href="blog-post-image-format.html"><img
-                                                        width="700" height="665" src="assets/images/blog-image/{{blog.hinhAnh}}"
-                                                        class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="blog-categories">
-                                                <ul>
-                                                    <li><a href="#">Audio</a></li>
-                                                    <li><a href="#">Travel</a></li>
-                                                    <li><a href="#">company</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="single-blog-post-content">
-                                            <h3 class="post-title"> <a routerLink="/blog-detail/{{blog.id}}"> {{blog.tieuDe}}</a></h3>
-                                            <div class="post-meta">
-                                                <p><span><i class="fa fa-user-circle"></i> Posted By: </span> <a
-                                                        href="#">admin</a> <span class="separator">/</span> <span><i
-                                                            class="fa fa-calendar"></i> Posted On: <a href="#">24
-                                                            August, 2019</a></span></p>
-                                            </div>
-
-                                            <p class="post-excerpt">
-                                                {{blog.noiDung}}
-                                            </p>
-                                            <a href="blog-post-image-format.html"
-                                                class="blog-readmore-btn">continue</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--=======  End of single blog post  =======-->
+        <div class="breadcrumb">
+            <ul class="d-flex align-items-center">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="blog">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Container End -->
+</div>
+<!-- Breadcrumb End -->
+<!-- Blog Page Start Here -->
+<div class="blog ptb-100  ptb-sm-60">
+    <div class="container">
+        <div class="main-blog">
+            <div class="row">
+                <!-- Single Blog Start -->
+                <div class="col-lg-6 col-sm-12" *ngFor="let blog of blogs">
+                    <div class="single-latest-blog">
+                        <div class="blog-img">
+                            <a routerLink="/blog-detail/{{blog.id}}"><img src="img\blog\1.jpg" alt="blog-image"></a>
                         </div>
-                       
-                    </div>
-                </div>
-
-                <!--=======  End of blog post container  =======-->
-
-                <!--=======  Pagination container  =======-->
-
-                <div class="pagination-container mb-sm-35 mb-xs-35">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <!--=======  pagination-content  =======-->
-
-                                <div class="pagination-content text-center">
-                                    <ul>
-                                        <li><a class="active" href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                    </ul>
-                                </div>
-
-                                <!--=======  End of pagination-content  =======-->
-                            </div>
+                        <div class="blog-desc">
+                            <h4><a routerLink="/blog-detail/{{blog.id}}">{{blog.tieuDe}}</a></h4>
+                            <ul class="meta-box d-flex">
+                                <li><a href="#">By Truemart</a></li>
+                            </ul>
+                            <p>{{blog.noiDung}}</p>
+                            <a class="readmore" routerLink="/blog-detail/{{blog.id}}">Read More</a>
+                        </div>
+                        <div class="blog-date">
+                            <span>{{blog.ngayDang | DateVN}}</span>
                         </div>
                     </div>
                 </div>
-
-                <!--=======  End of Pagination container  =======-->
+                <!-- Single Blog End -->
+               
+            </div>
+            <!-- Row End -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="pro-pagination">
+                        <ul class="blog-pagination">
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>                                    
+                        <div class="product-pagination">
+                            <span class="grid-item-list">Showing 1 to 12 of 51 (5 Pages)</span>
+                        </div>
+                    </div>
+                    <!-- Product Pagination Info -->
+                </div>
+            </div>
+            <!-- Row End -->
+        </div>
+    </div>
+    <!-- Container End -->
+</div>
+<!-- Blog Page End Here -->
+<!-- Support Area Start Here -->
+<div class="support-area bdr-top">
+    <div class="container">
+        <div class="d-flex flex-wrap text-center">
+            <div class="single-support">
+                <div class="support-icon">
+                    <i class="lnr lnr-gift"></i>
+                </div>
+                <div class="support-desc">
+                    <h6>Great Value</h6>
+                    <span>Nunc id ante quis tellus faucibus dictum in eget.</span>
+                </div>
+            </div>
+            <div class="single-support">
+                <div class="support-icon">
+                    <i class="lnr lnr-rocket"></i>
+                </div>
+                <div class="support-desc">
+                    <h6>Worlwide Delivery</h6>
+                    <span>Quisque posuere enim augue, in rhoncus diam dictum non</span>
+                </div>
+            </div>
+            <div class="single-support">
+                <div class="support-icon">
+                    <i class="lnr lnr-lock"></i>
+                </div>
+                <div class="support-desc">
+                    <h6>Safe Payment</h6>
+                    <span>Duis suscipit elit sem, sed mattis tellus accumsan.</span>
+                </div>
+            </div>
+            <div class="single-support">
+                <div class="support-icon">
+                    <i class="lnr lnr-enter-down"></i>
+                </div>
+                <div class="support-desc">
+                    <h6>Shop Confidence</h6>
+                    <span>Faucibus dictum suscipit eget metus. Duis  elit sem, sed.</span>
+                </div>
+            </div>
+            <div class="single-support">
+                <div class="support-icon">
+                    <i class="lnr lnr-users"></i>
+                </div>
+                <div class="support-desc">
+                    <h6>24/7 Help Center</h6>
+                    <span>Quisque posuere enim augue, in rhoncus diam dictum non.</span>
+                </div>
             </div>
         </div>
     </div>
+    <!-- Container End -->
 </div>
+<!-- Support Area End Here -->

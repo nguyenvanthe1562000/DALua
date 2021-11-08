@@ -8,10 +8,16 @@ import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
+<<<<<<< HEAD
 import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+=======
+import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
+
+
+>>>>>>> 4193252c8ffb4313ead6acbf29bc6d99e6c2187a
 @NgModule({
-  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent, ProductListComponent],
+  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent, ProductListComponent, DateVNPipe],
   imports: [
     CommonModule,
     NgbModule,
@@ -52,6 +58,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         component: ContactComponent
       },
     ])
+  ],
+  exports: [
+    DateVNPipe
   ],
 })
 export class PagesModule { }
