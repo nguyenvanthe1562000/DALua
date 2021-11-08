@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule,NgbAlert } from '@ng-bootstrap/ng-bootstrap'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +18,11 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
- 
-=======
-    FormsModule
->>>>>>> e26c3a43b2ffb9161912abc9f6547da09fe529d7
+    FormsModule,
+    NgbPaginationModule
+    ,NgbAlert,
+
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

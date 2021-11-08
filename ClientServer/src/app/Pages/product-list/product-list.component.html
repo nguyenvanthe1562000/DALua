@@ -1,66 +1,171 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <a href="kitchen.html"><img class="first-slide" src="assets/images/ba.jpg" alt="First slide"></a>
-            
-        </div>
-        <div class="item">
-            <a href="care.html"><img class="second-slide " src="assets/images/ba1.jpg" alt="Second slide"></a>
-            
-        </div>
-        <div class="item">
-            <a href="hold.html"><img class="third-slide " src="assets/images/ba2.jpg" alt="Third slide"></a>
-            
-        </div>
-    </div>
-    
-</div>
-
-<div class="content-top offer-w3agile">
-    <div class="container ">
-        <div class="spec ">
-            <h3>Special Offers</h3>
-            <div class="ser-t">
-                <b></b>
-                <span><i></i></span>
-                <b class="line"></b>
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-area mt-30">
+        <div class="container">
+            <div class="breadcrumb">
+                <ul class="d-flex align-items-center">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li class="active"><a href="product.html">Danh mục</a></li>
+                </ul>
             </div>
         </div>
-        <div class=" con-w3l wthree-of">
-            <div class="col-md-3 pro-1" *ngFor="let item of list_item">
-                <div class="col-m">								
-                    <a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-                        <img src="assets/images/of.png" class="img-responsive" alt="">
-                        <div class="offer"><p><span>Offer</span></p></div>
-                    </a>
-                    <div class="mid-1">
-                        <div class="women">
-                            <h6><a href="single.html">{{item.tenSp}}</a>(1 kg)</h6>							
-                        </div>
-                        <div class="mid-2">
-                            <p ><label>$2.00</label><em class="item_price">$1.50</em></p>
-                            <div class="block">
-                                <div class="starbox small ghosting"> </div>
+        <!-- Container End -->
+    </div>
+    <!-- Breadcrumb End -->
+    <!-- Shop Page Start -->
+    <div class="main-shop-page pt-100 pb-100 ptb-sm-60">
+        <div class="container">
+            <!-- Row End -->
+            <div class="row">
+                <!-- Sidebar Shopping Option Start -->
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <div class="sidebar">
+                        <!-- Sidebar Electronics Categorie Start -->
+                        <div class="electronics mb-40">
+                            <h3 class="sidebar-title">Loại</h3>
+                            <div id="shop-cate-toggle" class="category-menu sidebar-menu sidbar-style">
+                                <ul>
+                                    <li class="has-sub" *ngFor="let item of listCaterogry">
+                                        <a href="{{item.maLoaiSp}}">{{item.tenLoai}}</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="clearfix"></div>
+                            <!-- category-menu-end -->
                         </div>
-                        <div class="add">
-                            <button class="btn btn-danger my-cart-btn my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="assets/images/of.png">Add to Cart</button>
+                        <!-- Sidebar Electronics Categorie End -->
+                                          
+                        <!-- Single Banner Start -->
+                        <div class="col-img">
+                            <a href="shop.html"><img src="img\banner\banner-sidebar.jpg" alt="slider-banner"></a>
                         </div>
-                        
+                        <!-- Single Banner End -->
                     </div>
                 </div>
+                <!-- Sidebar Shopping Option End -->
+                <!-- Product Categorie List Start -->
+                <div class="col-lg-9 order-1 order-lg-2">
+                    <!-- Grid & List View Start -->
+                    <div class="grid-list-top border-default universal-padding d-md-flex justify-content-md-between align-items-center mb-30">
+                        <div class="grid-list-view  mb-sm-15">
+                            <ul class="nav tabs-area d-flex align-items-center">
+                                <li><a class="active" data-toggle="tab" href="#grid-view"><i class="fa fa-th"></i></a></li>
+                                <li><a data-toggle="tab" href="#list-view"><i class="fa fa-list-ul"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Toolbar Short Area Start -->
+                        <div class="main-toolbar-sorter clearfix">
+                            <div class="toolbar-sorter d-flex align-items-center">
+                                <label>Sắp xếp:</label>
+                                <select class="sorter wide">
+                                    <option value="Position">Relevance</option>
+                                    <option value="Product Name">Neme, A to Z</option>
+                                    <option value="Product Name">Neme, Z to A</option>
+                                    <option value="Price">Price low to heigh</option>
+                                    <option value="Price" selected="">Price heigh to low</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Toolbar Short Area End -->
+                        <!-- Toolbar Short Area Start -->
+                     
+                        <!-- Toolbar Short Area End -->
+                    </div>
+                    <!-- Grid & List View End -->
+                    <div class="main-categorie mb-all-40">
+                        <!-- Grid & List Main Area End -->
+                        <div class="tab-content fix">
+                            <div id="grid-view" class="tab-pane fade show active">
+                                <div class="row">
+                                    <!-- Single Product Start -->
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-6" *ngFor="let item of list_item">
+                                        <div class="single-product">
+                                            <!-- Product Image Start -->
+                                            <div class="pro-img">
+                                                <a href="product.html">
+                                                    <img class="primary-img" src="/ClientServer/src/assets/images/{{item.hinhAnh}}" alt="single-product">
+                                                   
+                                                </a>
+                                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                            </div>
+                                            <!-- Product Image End -->
+                                            <!-- Product Content Start -->
+                                            <div class="pro-content">
+                                                <div class="pro-info">
+                                                    <h4><a href="product.html">{{item.tenSp}}</a></h4>
+                                                    <p><span class="price">$320.45</span><del class="prev-price">{{item.dongia}}</del></p>
+                                                    <div class="label-product l_sale">30<span class="symbol-percent">%</span></div>
+                                                </div>
+                                                <div class="pro-actions">
+                                                    <div class="actions-primary">
+                                                        <a (click)="themGioHang(item)" title="Thêm giỏ hàng"> +Thêm giỏ hàng</a>
+                                                    </div>
+                                                    <div class="actions-secondary">
+                                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product Content End -->
+                                        </div>
+                                    </div>
+                                    <!-- Single Product End -->
+                                   
+                                </div>
+                                <!-- Row End -->
+                            </div>
+                            <!-- #grid view End -->
+                            <div id="list-view" class="tab-pane fade">
+                                <!-- Single Product Start -->
+                                <div class="single-product" *ngFor="let itemsp of list_item"> 
+                                    <div class="row">        
+                                        <!-- Product Image Start -->
+                                        <div class="col-lg-4 col-md-5 col-sm-12">
+                                            <div class="pro-img">
+                                                <a href="product.html">
+                                                    <img class="primary-img" src="/ClientServer/src/assets/images/{{itemsp.hinhAnh}}" alt="single-product">
+                                                    
+                                                </a>
+                                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                                 <span class="sticker-new">new</span>
+                                            </div>
+                                        </div>
+                                        <!-- Product Image End -->
+                                        <!-- Product Content Start -->
+                                        <div class="col-lg-8 col-md-7 col-sm-12">
+                                            <div class="pro-content hot-product2">
+                                                <h4><a href="product.html">{{itemsp.tenSp}}</a></h4>
+                                                <p><span class="price">{{itemsp.dongia}}</span></p>
+                                                <p>{{itemsp.moTa}}.</p>
+                                                <div class="pro-actions">
+                                                    <div class="actions-primary">
+                                                        <a (click)="themGioHang(itemsp)" title="" data-original-title="Thêm giỏ hàng"> + Thêm giỏ hàng</a>
+                                                    </div>
+                                                    <div class="actions-secondary">
+                                                        <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                                        <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Product Content End -->
+                                    </div>
+                                </div>
+                                <!-- Single Product End -->
+                               
+                               
+                            </div>
+                            <!-- #list view End -->
+                            <div class="pro-pagination">
+                                <ngb-pagination [collectionSize]="pageSize" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" class="blog-pagination"></ngb-pagination>
+                            </div>
+                            <!-- Product Pagination Info -->
+                        </div>
+                        <!-- Grid & List Main Area End -->
+                    </div>
+                </div>
+                <!-- product Categorie List End -->
             </div>
-            <!-- <div class="mt-5" style="position: relative;margin-left: 40%;">
-                <ngb-pagination [collectionSize]="totalItems" [pageSize]="pageSize" [(page)]="page" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
-            </div> -->
-            <div class="clearfix"></div>
+            <!-- Row End -->
         </div>
+        <!-- Container End -->
     </div>
-</div>
+    <!-- Shop Page End -->

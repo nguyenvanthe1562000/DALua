@@ -34,7 +34,21 @@ namespace API.Controllers
                 return Ok("Err");
             }
         }
+        [Route("get-sp-lienquan/{maLoaiSp}")]
+        [HttpGet]
+        public IActionResult GetSpLienQuan(string maLoaiSp)
+        {
+            try
+            {
+                var result = db.SanPhams.Where(x=>x.MaLoaiSp==maLoaiSp).OrderByDescending(o => o.MaSp).Take(5).ToList();
 
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Ok("Err");
+            }
+        }
         [Route("get-all-id")]
         [HttpGet]
         public IActionResult GetAllId()
