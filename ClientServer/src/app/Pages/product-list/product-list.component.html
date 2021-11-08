@@ -32,7 +32,7 @@
                             <!-- category-menu-end -->
                         </div>
                         <!-- Sidebar Electronics Categorie End -->
-                                          
+                        
                         <!-- Single Banner Start -->
                         <div class="col-img">
                             <a href="shop.html"><img src="img\banner\banner-sidebar.jpg" alt="slider-banner"></a>
@@ -66,7 +66,7 @@
                         </div>
                         <!-- Toolbar Short Area End -->
                         <!-- Toolbar Short Area Start -->
-                     
+                        
                         <!-- Toolbar Short Area End -->
                     </div>
                     <!-- Grid & List View End -->
@@ -82,7 +82,7 @@
                                             <div class="pro-img">
                                                 <a href="product.html">
                                                     <img class="primary-img" src="/ClientServer/src/assets/images/{{item.hinhAnh}}" alt="single-product">
-                                                   
+                                                    
                                                 </a>
                                                 <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                                             </div>
@@ -108,7 +108,7 @@
                                         </div>
                                     </div>
                                     <!-- Single Product End -->
-                                   
+                                    
                                 </div>
                                 <!-- Row End -->
                             </div>
@@ -125,7 +125,7 @@
                                                     
                                                 </a>
                                                 <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
-                                                 <span class="sticker-new">new</span>
+                                                <span class="sticker-new">new</span>
                                             </div>
                                         </div>
                                         <!-- Product Image End -->
@@ -150,13 +150,16 @@
                                     </div>
                                 </div>
                                 <!-- Single Product End -->
-                               
-                               
+                                
+                                
                             </div>
                             <!-- #list view End -->
                             <div class="pro-pagination">
-                                <ngb-pagination [collectionSize]="pageSize" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" class="blog-pagination"></ngb-pagination>
+                                <ngb-pagination [collectionSize]="pageSize"  [pageSize]="pageSize" [(page)]="page" [maxSize]="5" [rotate]="true"  ></ngb-pagination>
                             </div>
+                            <!-- <div class="mt-5" style="position: relative;margin-left: 40%;">
+                                <ngb-pagination [collectionSize]="totalItems" [pageSize]="pageSize" [(page)]="page" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+                            </div> -->
                             <!-- Product Pagination Info -->
                         </div>
                         <!-- Grid & List Main Area End -->
@@ -169,3 +172,4 @@
         <!-- Container End -->
     </div>
     <!-- Shop Page End -->
+    

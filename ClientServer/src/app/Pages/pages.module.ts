@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
   imports: [
     CommonModule,
     RouterModule,
+    NgbModule,
     RouterModule.forChild([
       {
         path: '',
