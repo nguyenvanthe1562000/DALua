@@ -81,7 +81,7 @@
                                             <!-- Product Image Start -->
                                             <div class="pro-img">
                                                 <a href="product.html">
-                                                    <img class="primary-img" src="/ClientServer/src/assets/images/{{item.hinhAnh}}" alt="single-product">
+                                                    <img class="primary-img" src="assets/images/{{item.hinhAnh}}" alt="single-product">
                                                    
                                                 </a>
                                                 <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
@@ -121,7 +121,7 @@
                                         <div class="col-lg-4 col-md-5 col-sm-12">
                                             <div class="pro-img">
                                                 <a href="product.html">
-                                                    <img class="primary-img" src="/ClientServer/src/assets/images/{{itemsp.hinhAnh}}" alt="single-product">
+                                                    <img class="primary-img" src="assets/images/{{itemsp.hinhAnh}}" alt="single-product">
                                                     
                                                 </a>
                                                 <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
@@ -154,9 +154,8 @@
                                
                             </div>
                             <!-- #list view End -->
-                            <div class="pro-pagination">
-                                <ngb-pagination [collectionSize]="pageSize" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" class="blog-pagination"></ngb-pagination>
-                            </div>
+                            <ngb-pagination [collectionSize]="totalItems" [pageSize]="pageSize" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+
                             <!-- Product Pagination Info -->
                         </div>
                         <!-- Grid & List Main Area End -->
