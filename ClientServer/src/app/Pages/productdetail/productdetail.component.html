@@ -1,391 +1,362 @@
-
-    <!--=============================================
-    =            breadcrumb area         =
-    =============================================-->
-
-    <div class="breadcrumb-area mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="breadcrumb-container" >
-                        <ul>
-                            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                            
-                            <li><a href="#">{{item.maLoaiSp}}</a></li>
-                            <li class="active">{{item.tenSp}} </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--banner-->
+<div class="banner-top">
+    <div class="container">
+        <h3 >Lorem</h3>
+        <h4><a href="index.html">Home</a><label>/</label>Lorem</h4>
+        <div class="clearfix"> </div>
     </div>
-
-    <!--=====  End of breadcrumb area  ======-->
-
-    <!--=============================================
-    =            single product content         =
-    =============================================-->
-
-    <div class="single-product-content ">
-        <div class="container">
-            <!--=======  single product content container  =======-->
-            <div class="single-product-content-container tabstyle-3 mb-35">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-
-                        <!-- product quickview image gallery -->
-                        <div class="product-image-slider  d-flex flex-column mb-sm-35">
-                            <!--Modal Tab Content Start-->
-                            <div class="tab-content product-large-image-list">
-                                <div class="tab-pane fade show active" id="single-slide1" role="tabpanel"
-                                    aria-labelledby="single-slide-tab-1">
-                                    <!--Single Product Image Start-->
-                                    <div class="single-product-img easyzoom img-full">
-                                        <img width="600" height="600" src="assets/images/anh/{{item.hinhAnh}}" class="img-fluid"
-                                            alt="">
-                                        <a href="assets/images/anh/{{item.hinhAnh}}"
-                                            class="big-image-popup"><i class="fa fa-search-plus"></i></a>
-                                    </div>
-                                    <!--Single Product Image End-->
-                                </div>
-                               
-                            </div>
-                            <!--Modal Content End-->
-
-                            <!--Modal Tab Menu Start-->
-                          
-                            <!--Modal Tab Menu End-->
-                        </div>
-                        <!-- end of product quickview image gallery -->
-
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <!-- product quick view description -->
-                        <div class="product-feature-details">
-                            <h2 class="product-title mb-15">{{item.tenSp}}</h2>
-
-                            <p class="product-rating">
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star"></i>
-
-                               
-                            </p>
-
-                            <h2 class="product-price mb-15">
-                                <!-- <span class="main-price">$12.90</span> -->
-                                <span class="discounted-price"> {{item.dongia}}</span>
-                            </h2>
-
-                            <p class="product-description mb-20">{{item.moTa}}</p>
-
-                            
-
-                           
-
-
-                            <div class="cart-buttons mb-20">
-                                <div class="pro-qty mr-20 mb-xs-20">
-                                    <input type="text" value="1">
-                                </div>
-                                <div class="add-to-cart-btn" style="margin-left: 20px;">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
-                            </div>
-                           
-                            </div>
-
-                          
-
-                            <div class="single-product-category mb-20">
-                                <h3>Categories: <a
-                                            href="shop-left-sidebar.html">{{item.maLoaiSp}}</a></h3>
-                            </div>
-
-
-                           
-                        </div>
-                        <!-- end of product quick view description -->
-                    </div>
-                </div>
-            </div>
-
-            <!--=======  End of single product content container  =======-->
-
-        </div>
-
-    </div>
-
-    <!--=====  End of single product content  ======-->
-
-    <!--=============================================
-    =            single product tab         =
-    =============================================-->
-
-    <div class="single-product-tab-section mb-35">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tab-slider-wrapper">
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="description-tab" data-bs-toggle="tab"
-                                    href="#description" role="tab" aria-selected="true">Mô tả</a>
-                                <a class="nav-item nav-link" id="features-tab" data-bs-toggle="tab" href="#features"
-                                    role="tab" aria-selected="false">Đặc điểm</a>
-                                <a class="nav-item nav-link" id="review-tab" data-bs-toggle="tab" href="#review" role="tab"
-                                    aria-selected="false">Đánh giá (3)</a>
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="description" role="tabpanel"
-                                aria-labelledby="description-tab">
-                                <p class="product-desc">{{item.moTa}}</p>
-                            </div>
-                            <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
-                                <table class="table-data-sheet">
-                                    <tbody>
-                                        <tr class="odd">
-
-                                            <td>Tên sản phẩm</td>
-                                            <td>{{item.tenSp}}</td>
-                                        </tr>
-                                        <tr class="even">
-
-                                            <td>Đơn vị mua</td>
-                                            <td>{{item.donVi}}</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                <div class="product-ratting-wrap">
-                                    <div class="pro-avg-ratting">
-                                        <h4>4.5 <span>(Overall)</span></h4>
-                                        <span>Based on 9 Comments</span>
-                                    </div>
-                                    <div class="ratting-list">
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <span>(5)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(3)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(1)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(0)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(0)</span>
-                                        </div>
-                                    </div>
-                                    <div class="rattings-wrapper">
-
-                                        <div class="sin-rattings">
-                                            <div class="ratting-author">
-                                                <h3>Cristopher Lee</h3>
-                                                <div class="ratting-star">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </div>
-                                            <p>enim ipsam voluptatem quia voluptas sit
-                                                aspernatur aut odit aut fugit, sed quia res eos
-                                                qui ratione voluptatem sequi Neque porro
-                                                quisquam est, qui dolorem ipsum quia dolor sit
-                                                amet, consectetur, adipisci veli</p>
-                                        </div>
-
-                                        <div class="sin-rattings">
-                                            <div class="ratting-author">
-                                                <h3>Nirob Khan</h3>
-                                                <div class="ratting-star">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </div>
-                                            <p>enim ipsam voluptatem quia voluptas sit
-                                                aspernatur aut odit aut fugit, sed quia res eos
-                                                qui ratione voluptatem sequi Neque porro
-                                                quisquam est, qui dolorem ipsum quia dolor sit
-                                                amet, consectetur, adipisci veli</p>
-                                        </div>
-
-                                        <div class="sin-rattings">
-                                            <div class="ratting-author">
-                                                <h3>MD.ZENAUL ISLAM</h3>
-                                                <div class="ratting-star">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </div>
-                                            <p>enim ipsam voluptatem quia voluptas sit
-                                                aspernatur aut odit aut fugit, sed quia res eos
-                                                qui ratione voluptatem sequi Neque porro
-                                                quisquam est, qui dolorem ipsum quia dolor sit
-                                                amet, consectetur, adipisci veli</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="ratting-form-wrapper fix">
-                                        <h3>Add your Comments</h3>
-                                        <form action="#">
-                                            <div class="ratting-form row">
-                                                <div class="col-12 mb-15">
-                                                    <h5>Rating:</h5>
-                                                    <div class="ratting-star fix">
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-12 mb-15">
-                                                    <label for="name">Name:</label>
-                                                    <input id="name" placeholder="Name" type="text">
-                                                </div>
-                                                <div class="col-md-6 col-12 mb-15">
-                                                    <label for="email">Email:</label>
-                                                    <input id="email" placeholder="Email" type="text">
-                                                </div>
-                                                <div class="col-12 mb-15">
-                                                    <label for="your-review">Your Review:</label>
-                                                    <textarea name="review" id="your-review"
-                                                        placeholder="Write a review"></textarea>
-                                                </div>
-                                                <div class="col-12">
-                                                    <input value="add review" type="submit">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--=====  End of single product tab  ======-->
-
-    <!--=============================================
-	=            Related Product slider         =
-	=============================================-->
-
-    <div class="slider related-product-slider mb-35">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--=======  multisale  slider section title  =======-->
-
-                    <div class="section-title">
-                        <h3>Sản phẩm khác</h3>
-                    </div>
-
-                    <!--=======  End of multisale slider section title  =======-->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--=======  related product slider wrapper  =======-->
-
-                    <div class="related-product-slider-wrapper" *ngFor="let sp of datasp">
-                        <!--=======  single related slider product  =======-->
-
-                        <div class="gf-product related-slider-product">
-                            <div class="image">
-                                <a href="single-product.html">
-                                   
-                                    <img width="350" height="350" src="assets/images/anh/{{sp.hinhAnh}}" class="img-fluid" alt="">
-                                </a>
-                                <div class="product-hover-icons">
-                                    <a href="#" data-tooltip="Add to cart"> <span class="icon_cart_alt"></span></a>
-                                    <a href="#" data-tooltip="Add to wishlist"> <span class="icon_heart_alt"></span>
-                                    </a>
-                                    <a href="#" data-tooltip="Compare"> <span class="arrow_left-right_alt"></span> </a>
-                                    <a href="#" data-tooltip="Quick view" data-bs-toggle="modal"
-                                        data-bs-target="#quick-view-modal-container"> <span class="icon_search"></span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-categories">
-                                    
-                                    <a [routerLink]="['/product-detail',sp.maSp]">{{sp.maLoaiSp}}</a>
-                                </div>
-                                <h3 class="product-title"><a [routerLink]="['/product-detail',sp.maSp]">{{sp.tenSp}}</a></h3>
-                                <div class="price-box">
-                                  
-                                    <span class="discounted-price">{{sp.dongia}}</span>
-                                </div>
-                            </div>
-
-                        </div>
-
+</div>
+<div class="single">
+    <div class="container">
+        <div class="single-top-main">
+            <div class="col-md-5 single-top">
+                <div class="single-w3agile">
                     
-
+                    <div id="picture-frame">
+                        <img src="assets/images/si.jpg" data-src="assets/images/si-1.jpg" alt="" class="img-responsive"/>
                     </div>
-
-                    <!--=======  End of related product slider wrapper  =======-->
+                    <script src="js/jquery.zoomtoo.js"></script>
+                    <script>
+                        $(function() {
+                            $("#picture-frame").zoomToo({
+                                magnify: 1
+                            });
+                        });
+                    </script>
+                    
+                    
+                    
                 </div>
             </div>
+            <div class="col-md-7 single-top-left ">
+                <div class="single-right">
+                    <h3>Wheat</h3>
+                    
+                    
+                    <div class="pr-single">
+                        <p class="reduced "><del>$10.00</del>$5.00</p>
+                    </div>
+                    <div class="block block-w3">
+                        <div class="starbox small ghosting"> </div>
+                    </div>
+                    <p class="in-pa"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                    
+                    <ul class="social-top">
+                        <li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
+                        <li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
+                        <li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
+                        <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
+                    </ul>
+                    <div class="add add-3">
+                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Wheat" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="assets/images/si.jpg">Add to Cart</button>
+                    </div>
+                    
+                    
+                    
+                    <div class="clearfix"> </div>
+                </div>
+                
+                
+            </div>
+            <div class="clearfix"> </div>
+        </div>	
+        
+        
+    </div>
+</div>
+<!---->
+<div class="content-top offer-w3agile">
+    <div class="container ">
+        <div class="spec ">
+            <h3>Special Offers</h3>
+            <div class="ser-t">
+                <b></b>
+                <span><i></i></span>
+                <b class="line"></b>
+            </div>
+        </div>
+        <div class=" con-w3l wthree-of">
+            
+            
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal5" class="offer-img">
+                        <img src="assets/images/of4.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Lays</a>(100 g)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$1.00</label><em class="item_price">$0.70</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="assets/images/of4.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal6" class="offer-img">
+                        <img src="assets/images/of5.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Kurkure</a>(100 g)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$1.00</label><em class="item_price">$0.70</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="assets/images/of5.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal7" class="offer-img">
+                        <img src="assets/images/of6.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Popcorn</a>(250 g)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$2.00</label><em class="item_price">$1.00</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="7" data-name="product 1" data-summary="summary 1" data-price="1.00" data-quantity="1" data-image="assets/images/of6.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal8" class="offer-img">
+                        <img src="assets/images/of7.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html"> Nuts</a>(250 g)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$4.00</label><em class="item_price">$3.50</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="assets/images/of7.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal9" class="offer-img">
+                        <img src="assets/images/of8.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Banana</a>(6 pcs)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$2.00</label><em class="item_price">$1.50</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="assets/images/of8.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal10" class="offer-img">
+                        <img src="assets/images/of9.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Onion</a>(1 kg)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$1.00</label><em class="item_price">$0.70</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="assets/images/of9.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal11" class="offer-img">
+                        <img src="assets/images/of10.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html"> Bitter Gourd</a>(1 kg)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$2.00</label><em class="item_price">$1.00</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="assets/images/of10.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal12" class="offer-img">
+                        <img src="assets/images/of11.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Apples</a>(1 kg)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$4.00</label><em class="item_price">$3.50</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="assets/images/of11.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal13" class="offer-img">
+                        <img src="assets/images/of12.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Honey</a>(500g)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$7.00</label><em class="item_price">$6.00</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="assets/images/of12.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal14" class="offer-img">
+                        <img src="assets/images/of13.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Chocos</a>(250g)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$5.00</label><em class="item_price">$4.50</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="assets/images/of13.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal15" class="offer-img">
+                        <img src="assets/images/of14.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Oats</a>(1 kg)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$4.00</label><em class="item_price">$3.50</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="assets/images/of14.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pro-1">
+                <div class="col-m">
+                    <a href="#" data-toggle="modal" data-target="#myModal16" class="offer-img">
+                        <img src="assets/images/of15.png" class="img-responsive" alt="">
+                        <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                        <div class="women">
+                            <h6><a href="single.html">Bread</a>(500 g)</h6>							
+                        </div>
+                        <div class="mid-2">
+                            <p ><label>$1.00</label><em class="item_price">$0.80</em></p>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="add">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="assets/images/of15.png">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
-
-    <!--=====  End of Related product slider  ======-->
-
-    <!--=============================================
-	=            Upsell Product slider         =
-	=============================================-->
-
-    
-
-    <!--=====  End of Upsell product slider  ======-->
-
-    <!--=============================================
-	=            Footer         =
-	=============================================-->
+</div>

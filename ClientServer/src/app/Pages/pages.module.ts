@@ -7,11 +7,11 @@ import { BlogComponent } from './blog/blog.component';
 import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent],
+  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent, ProductListComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -25,7 +25,10 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
         component: HomeComponent
       },
       {
-
+        path: 'product-list/:id',
+        component: ProductListComponent
+      },
+      {
         path: 'product-detail/:id',
         component: ProductdetailComponent
       },
