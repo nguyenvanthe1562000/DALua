@@ -10,6 +10,7 @@ import { LoaiComponent } from './loai/loai.component';
 import { BlogComponent } from './blog/blog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
+import { PageComponent } from '../page/page/page.component';
 
 
 
@@ -24,33 +25,39 @@ import { NgbModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
     RouterModule,
     RouterModule.forChild([
       {
-        path: '',
-        component: MainComponent
+        path:'',component:PageComponent,
+        children:[
+          {
+            path: '',
+            component: MainComponent
+          },
+          {
+            path: 'loai',
+            component: LoaiComponent
+          },
+          {
+            path: 'product',
+            component: ProductComponent
+          },
+          {
+            path: 'customer',
+            component: CustomerComponent
+          },
+          {
+            path: 'Vendor',
+            component: VendorComponent
+          },
+          {
+            path: 'bill',
+            component: BillComponent
+          },
+          {
+            path: 'blog',
+            component: BlogComponent
+          },
+        ]
       },
-      {
-        path: 'loai',
-        component: LoaiComponent
-      },
-      {
-        path: 'product',
-        component: ProductComponent
-      },
-      {
-        path: 'customer',
-        component: CustomerComponent
-      },
-      {
-        path: 'Vendor',
-        component: VendorComponent
-      },
-      {
-        path: 'bill',
-        component: BillComponent
-      },
-      {
-        path: 'blog',
-        component: BlogComponent
-      },
+     
   ])
 ], 
 
