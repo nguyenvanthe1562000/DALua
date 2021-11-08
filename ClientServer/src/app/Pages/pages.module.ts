@@ -8,10 +8,11 @@ import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent, ProductListComponent],
+  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent, ProductListComponent, DateVNPipe],
   imports: [
     CommonModule,
     RouterModule,
@@ -49,6 +50,9 @@ import { ProductListComponent } from './product-list/product-list.component';
         component: ContactComponent
       },
     ])
+  ],
+  exports: [
+    DateVNPipe
   ],
 })
 export class PagesModule { }
