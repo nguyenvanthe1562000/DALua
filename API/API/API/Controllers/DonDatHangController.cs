@@ -120,6 +120,68 @@ namespace API.Controllers
             }
         }
 
+<<<<<<< HEAD
+=======
+        [Route("create")]
+        [HttpPost]
+        public async Task<IActionResult> DatHang([FromBody] DonDatHangDTO hoaDonDTO)
+        {
+            try
+            {
+                DonDatHang donDatHang = new DonDatHang()
+                {
+                    MaDonHang = Guid.NewGuid().ToString(),
+                    DiaChiNhan = hoaDonDTO.DiaChiNhan,
+                    Sdtnhan = hoaDonDTO.Sdtnhan,
+                    TinhTrang = false,
+                    ThanhTien = hoaDonDTO.ThanhTien,
+                    NgayDat = DateTime.Now,
+                    NgayGiao = DateTime.Now.AddDays(4)
+                };
+                List<CtdonDatHang> ctdonDatHangs = new List<CtdonDatHang>();
+                foreach (var item in hoaDonDTO.HoaDonChiTietDTO)
+                {
+                    CtdonDatHang ctdonDatHang = new CtdonDatHang()
+                    {
+                        MaCtdonDatHang = Guid.NewGuid().ToString(),
+                        MaDonHang = donDatHang.MaDonHang,
+                        MaSp = item.MaSp,
+                        TenSp = item.TenSp,
+                        hinhAnh = item.hinhAnh,
+                        SoLuong = item.SoLuong,
+                        DonGia = item.DonGia
+                    };
+                    ctdonDatHangs.Add(ctdonDatHang);
+                }
+                donDatHang.CtdonDatHangs = ctdonDatHangs;
+                db.DonDatHangs.Add(donDatHang);
+                await db.SaveChangesAsync();
+                return Ok();
+                //return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Ok("Err");
+            }
+        }
+
+        [Route("get-by-id/{id}")]
+        [HttpGet]
+        public IActionResult GetById(string MaDonHang)
+        {
+            try
+            {
+                var dondathang = db.DonDatHangs.Include(x => x.CtdonDatHangs).FirstOrDefault(x => x.MaDonHang == MaDonHang);
+                return Ok(dondathang);
+                //return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Ok("Err");
+            }
+        }
+
+>>>>>>> 2b3d264bbcd7099cf70c5f4a15c82c7467decb1f
         [Route("update")]
         [HttpPost]
         public async Task<IActionResult> UpdateDonDatHang([FromBody] DonDatHang hoaDon)

@@ -15,6 +15,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+
+>>>>>>> 2b3d264bbcd7099cf70c5f4a15c82c7467decb1f
 =======
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
