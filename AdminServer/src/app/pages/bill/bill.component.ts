@@ -10,17 +10,23 @@ import 'rxjs/add/operator/takeUntil';
   styleUrls: ['./bill.component.css']
 })
 export class BillComponent extends BaseComponent implements OnInit {
-
+  public doneSetup = false;
+  public orderdetail:any;
   public bills: any;
   constructor(injector: Injector) {
     super(injector);
   }
   ngOnInit(): void {
-    
-    this._api.get('/api/dondathang/get-all').takeUntil(this.unsubscribe).subscribe(res => {
+    this._api.get('/api/DonDatHang/get-all').takeUntil(this.unsubscribe).subscribe(res => {
       this.bills= res;
     }); 
-    
   }
-
+  onRowExpand(row:any) {
+    this.doneSetup = false; 
+    this._api.get('/api/DonDatHang/get-by-id/'+ row.data.maDonHang).subscribe((res:any) => {
+      this.orderdetail = res;
+      debugger;
+      this.doneSetup = true; 
+    });
+  }
 }

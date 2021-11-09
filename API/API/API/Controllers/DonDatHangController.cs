@@ -29,10 +29,12 @@ namespace API.Controllers
 
                 var reCT = (from ch in db.CtdonDatHangs join it in db.SanPhams on ch.MaSp equals it.MaSp select new { ch.MaDonHang, ch.MaCtdonDatHang, ch.MaSp, it.TenSp, ch.SoLuong, it.Dongia }).ToList();
                 var result = (from hd in db.DonDatHangs
+                              join kh in db.KhachHangs on hd.MaKh equals kh.MaKh
                               select new
                               {
                                   hd.MaDonHang,
                                   hd.MaKh,
+                                  kh.TenKh,
                                   hd.DiaChiNhan,
                                   hd.Sdtnhan,
                                   hd.TinhTrang,
@@ -40,7 +42,6 @@ namespace API.Controllers
                                   hd.NgayDat,
                                   hd.NgayGiao,
                                   cthoaDons = reCT
-
                               }).ToList();
                 return Ok(result);
             }
@@ -95,13 +96,23 @@ namespace API.Controllers
 
         [Route("get-by-id/{id}")]
         [HttpGet]
-        public IActionResult GetById(string MaDonHang)
+        public IActionResult GetById(string id)
         {
             try
             {
-                var dondathang = db.DonDatHangs.Include(x => x.CtdonDatHangs).FirstOrDefault(x => x.MaDonHang == MaDonHang);
-                return Ok(dondathang);
-                //return Ok(result);
+                // var result = db.ChiTietHoaDons.Where(s => s.MaHoaDon == id).Select(a=>new { a.ItemId,a.Item.ItemName, a.SoLuong}).ToList();
+                // return Ok(result);
+                var result = (from ch in db.CtdonDatHangs
+                              join it in db.SanPhams on ch.MaSp equals it.MaSp
+                              where ch.MaDonHang == id
+                              select new
+                              {
+                                  it.MaSp,
+                                  it.TenSp,
+                                  it.Dongia,
+                                  ch.SoLuong
+                              }).ToList();
+                return Ok(result);
             }
             catch (Exception ex)
             {

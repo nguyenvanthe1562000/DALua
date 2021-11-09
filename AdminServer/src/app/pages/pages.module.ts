@@ -10,18 +10,19 @@ import { LoaiComponent } from './loai/loai.component';
 import { BlogComponent } from './blog/blog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
-
+import {TableModule} from 'primeng/table';
+import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
 
 
 @NgModule({
-  declarations: [MainComponent, ProductComponent, CustomerComponent, VendorComponent, BillComponent, LoaiComponent, BlogComponent],
+  declarations: [MainComponent, ProductComponent, CustomerComponent, VendorComponent, BillComponent, LoaiComponent, BlogComponent, DateVNPipe],
   imports: [
     ReactiveFormsModule,
     NgbModule,
-    // NgbPagination,
     FormsModule,
     CommonModule,
     RouterModule,
+    TableModule,
     RouterModule.forChild([
       {
         path: '',
@@ -51,8 +52,11 @@ import { NgbModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
         path: 'blog',
         component: BlogComponent
       },
-  ])
-], 
-
+    ])
+  ], 
+  exports: [
+    DateVNPipe
+  ]
+  
 })
 export class PagesModule { }
