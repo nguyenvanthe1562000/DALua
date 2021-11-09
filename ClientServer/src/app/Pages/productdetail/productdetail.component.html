@@ -1,391 +1,259 @@
-
-    <!--=============================================
-    =            breadcrumb area         =
-    =============================================-->
-
-    <div class="breadcrumb-area mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="breadcrumb-container" >
-                        <ul>
-                            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                            
-                            <li><a href="#">{{item.maLoaiSp}}</a></li>
-                            <li class="active">{{item.tenSp}} </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-area mt-30">
+    <div class="container">
+        <div class="breadcrumb">
+            <ul class="d-flex align-items-center">
+                <li><a href="index.html">trang chủ</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li class="active"><a href="product.html">{{item.tenSp}}</a></li>
+            </ul>
         </div>
     </div>
-
-    <!--=====  End of breadcrumb area  ======-->
-
-    <!--=============================================
-    =            single product content         =
-    =============================================-->
-
-    <div class="single-product-content ">
-        <div class="container">
-            <!--=======  single product content container  =======-->
-            <div class="single-product-content-container tabstyle-3 mb-35">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-
-                        <!-- product quickview image gallery -->
-                        <div class="product-image-slider  d-flex flex-column mb-sm-35">
-                            <!--Modal Tab Content Start-->
-                            <div class="tab-content product-large-image-list">
-                                <div class="tab-pane fade show active" id="single-slide1" role="tabpanel"
-                                    aria-labelledby="single-slide-tab-1">
-                                    <!--Single Product Image Start-->
-                                    <div class="single-product-img easyzoom img-full">
-                                        <img width="600" height="600" src="assets/images/anh/{{item.hinhAnh}}" class="img-fluid"
-                                            alt="">
-                                        <a href="assets/images/anh/{{item.hinhAnh}}"
-                                            class="big-image-popup"><i class="fa fa-search-plus"></i></a>
-                                    </div>
-                                    <!--Single Product Image End-->
-                                </div>
-                               
-                            </div>
-                            <!--Modal Content End-->
-
-                            <!--Modal Tab Menu Start-->
-                          
-                            <!--Modal Tab Menu End-->
-                        </div>
-                        <!-- end of product quickview image gallery -->
-
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-xs-12">
-                        <!-- product quick view description -->
-                        <div class="product-feature-details">
-                            <h2 class="product-title mb-15">{{item.tenSp}}</h2>
-
-                            <p class="product-rating">
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star"></i>
-
-                               
-                            </p>
-
-                            <h2 class="product-price mb-15">
-                                <!-- <span class="main-price">$12.90</span> -->
-                                <span class="discounted-price"> {{item.dongia}}</span>
-                            </h2>
-
-                            <p class="product-description mb-20">{{item.moTa}}</p>
-
-                            
-
-                           
-
-
-                            <div class="cart-buttons mb-20">
-                                <div class="pro-qty mr-20 mb-xs-20">
-                                    <input type="text" value="1">
-                                </div>
-                                <div class="add-to-cart-btn" style="margin-left: 20px;">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
-                            </div>
-                           
-                            </div>
-
-                          
-
-                            <div class="single-product-category mb-20">
-                                <h3>Categories: <a
-                                            href="shop-left-sidebar.html">{{item.maLoaiSp}}</a></h3>
-                            </div>
-
-
-                           
-                        </div>
-                        <!-- end of product quick view description -->
-                    </div>
-                </div>
-            </div>
-
-            <!--=======  End of single product content container  =======-->
-
-        </div>
-
-    </div>
-
-    <!--=====  End of single product content  ======-->
-
-    <!--=============================================
-    =            single product tab         =
-    =============================================-->
-
-    <div class="single-product-tab-section mb-35">
-        <div class="container">
+    <!-- Container End -->
+</div>
+<!-- Breadcrumb End -->
+  <!-- Product Thumbnail Start -->
+  <div class="main-product-thumbnail ptb-100 ptb-sm-60">
+    <div class="container">
+        <div class="thumb-bg">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="tab-slider-wrapper">
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="description-tab" data-bs-toggle="tab"
-                                    href="#description" role="tab" aria-selected="true">Mô tả</a>
-                                <a class="nav-item nav-link" id="features-tab" data-bs-toggle="tab" href="#features"
-                                    role="tab" aria-selected="false">Đặc điểm</a>
-                                <a class="nav-item nav-link" id="review-tab" data-bs-toggle="tab" href="#review" role="tab"
-                                    aria-selected="false">Đánh giá (3)</a>
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="description" role="tabpanel"
-                                aria-labelledby="description-tab">
-                                <p class="product-desc">{{item.moTa}}</p>
-                            </div>
-                            <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
-                                <table class="table-data-sheet">
-                                    <tbody>
-                                        <tr class="odd">
-
-                                            <td>Tên sản phẩm</td>
-                                            <td>{{item.tenSp}}</td>
-                                        </tr>
-                                        <tr class="even">
-
-                                            <td>Đơn vị mua</td>
-                                            <td>{{item.donVi}}</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                <div class="product-ratting-wrap">
-                                    <div class="pro-avg-ratting">
-                                        <h4>4.5 <span>(Overall)</span></h4>
-                                        <span>Based on 9 Comments</span>
-                                    </div>
-                                    <div class="ratting-list">
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <span>(5)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(3)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(1)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(0)</span>
-                                        </div>
-                                        <div class="sin-list float-start">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>(0)</span>
-                                        </div>
-                                    </div>
-                                    <div class="rattings-wrapper">
-
-                                        <div class="sin-rattings">
-                                            <div class="ratting-author">
-                                                <h3>Cristopher Lee</h3>
-                                                <div class="ratting-star">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </div>
-                                            <p>enim ipsam voluptatem quia voluptas sit
-                                                aspernatur aut odit aut fugit, sed quia res eos
-                                                qui ratione voluptatem sequi Neque porro
-                                                quisquam est, qui dolorem ipsum quia dolor sit
-                                                amet, consectetur, adipisci veli</p>
-                                        </div>
-
-                                        <div class="sin-rattings">
-                                            <div class="ratting-author">
-                                                <h3>Nirob Khan</h3>
-                                                <div class="ratting-star">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </div>
-                                            <p>enim ipsam voluptatem quia voluptas sit
-                                                aspernatur aut odit aut fugit, sed quia res eos
-                                                qui ratione voluptatem sequi Neque porro
-                                                quisquam est, qui dolorem ipsum quia dolor sit
-                                                amet, consectetur, adipisci veli</p>
-                                        </div>
-
-                                        <div class="sin-rattings">
-                                            <div class="ratting-author">
-                                                <h3>MD.ZENAUL ISLAM</h3>
-                                                <div class="ratting-star">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <span>(5)</span>
-                                                </div>
-                                            </div>
-                                            <p>enim ipsam voluptatem quia voluptas sit
-                                                aspernatur aut odit aut fugit, sed quia res eos
-                                                qui ratione voluptatem sequi Neque porro
-                                                quisquam est, qui dolorem ipsum quia dolor sit
-                                                amet, consectetur, adipisci veli</p>
-                                        </div>
-
-                                    </div>
-                                    <div class="ratting-form-wrapper fix">
-                                        <h3>Add your Comments</h3>
-                                        <form action="#">
-                                            <div class="ratting-form row">
-                                                <div class="col-12 mb-15">
-                                                    <h5>Rating:</h5>
-                                                    <div class="ratting-star fix">
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-12 mb-15">
-                                                    <label for="name">Name:</label>
-                                                    <input id="name" placeholder="Name" type="text">
-                                                </div>
-                                                <div class="col-md-6 col-12 mb-15">
-                                                    <label for="email">Email:</label>
-                                                    <input id="email" placeholder="Email" type="text">
-                                                </div>
-                                                <div class="col-12 mb-15">
-                                                    <label for="your-review">Your Review:</label>
-                                                    <textarea name="review" id="your-review"
-                                                        placeholder="Write a review"></textarea>
-                                                </div>
-                                                <div class="col-12">
-                                                    <input value="add review" type="submit">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Main Thumbnail Image Start -->
+                <div class="col-lg-5 mb-all-40">
+                    <!-- Thumbnail Large Image start -->
+                    <div class="tab-content">
+                        <div id="thumb1" class="tab-pane fade show active">
+                            <a data-fancybox="images" href="assets/images/anh/{{item.hinhAnh}}"><img src="assets/images/anh/{{item.hinhAnh}}" alt="product-view"></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--=====  End of single product tab  ======-->
-
-    <!--=============================================
-	=            Related Product slider         =
-	=============================================-->
-
-    <div class="slider related-product-slider mb-35">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--=======  multisale  slider section title  =======-->
-
-                    <div class="section-title">
-                        <h3>Sản phẩm khác</h3>
-                    </div>
-
-                    <!--=======  End of multisale slider section title  =======-->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--=======  related product slider wrapper  =======-->
-
-                    <div class="related-product-slider-wrapper" *ngFor="let sp of datasp">
-                        <!--=======  single related slider product  =======-->
-
-                        <div class="gf-product related-slider-product">
-                            <div class="image">
-                                <a href="single-product.html">
-                                   
-                                    <img width="350" height="350" src="assets/images/anh/{{sp.hinhAnh}}" class="img-fluid" alt="">
-                                </a>
-                                <div class="product-hover-icons">
-                                    <a href="#" data-tooltip="Add to cart"> <span class="icon_cart_alt"></span></a>
-                                    <a href="#" data-tooltip="Add to wishlist"> <span class="icon_heart_alt"></span>
-                                    </a>
-                                    <a href="#" data-tooltip="Compare"> <span class="arrow_left-right_alt"></span> </a>
-                                    <a href="#" data-tooltip="Quick view" data-bs-toggle="modal"
-                                        data-bs-target="#quick-view-modal-container"> <span class="icon_search"></span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <div class="product-categories">
-                                    
-                                    <a [routerLink]="['/product-detail',sp.maSp]">{{sp.maLoaiSp}}</a>
-                                </div>
-                                <h3 class="product-title"><a [routerLink]="['/product-detail',sp.maSp]">{{sp.tenSp}}</a></h3>
-                                <div class="price-box">
-                                  
-                                    <span class="discounted-price">{{sp.dongia}}</span>
-                                </div>
-                            </div>
-
-                        </div>
-
                     
-
                     </div>
-
-                    <!--=======  End of related product slider wrapper  =======-->
+                    <!-- Thumbnail Large Image End -->
+                    <!-- Thumbnail Image End -->
+                 
+                    <!-- Thumbnail image end -->
                 </div>
+                <!-- Main Thumbnail Image End -->
+                <!-- Thumbnail Description Start -->
+                <div class="col-lg-7">
+                    <div class="thubnail-desc fix">
+                        <h3 class="product-header">{{item.tenSp}}</h3>
+                        <div class="rating-summary fix mtb-10">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="rating-feedback">
+                                <a href="#">({{item.soLanMua}})</a>
+                                <a href="#">Đã bán</a>
+                            </div>
+                        </div>
+                        <div class="pro-price mtb-30">
+                            <p class="d-flex align-items-center"><span class="prev-price">16.51</span><span class="price">{{item.dongia}}</span><span class="saving-price">save 8%</span></p>
+                        </div>
+                        <p class="mb-20 pro-desc-details">{{item.moTa}}</p>
+                        
+                        <div class="box-quantity d-flex hot-product2">
+                            <form action="#">
+                                <input class="quantity mr-15" type="number" min="1" value="1">
+                            </form>
+                            <div class="pro-actions">
+                                <div class="actions-primary">
+                                    <a (click)="themGioHang(item)"> + Thêm giỏ hàng</a>
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <div class="pro-ref mt-20">
+                            <p><span class="in-stock"><i class="ion-checkmark-round"></i>CÒN HÀNG</span></p>
+                        </div>
+                        <div class="socila-sharing mt-25">
+                            <ul class="d-flex">
+                                <li>Chia sẻ</li>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thumbnail Description End -->
             </div>
+            <!-- Row End -->
         </div>
     </div>
+    <!-- Container End -->
+</div>
+<!-- Product Thumbnail End -->
+ <!-- Product Thumbnail Description Start -->
+ <div class="thumnail-desc pb-100 pb-sm-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="main-thumb-desc nav tabs-area" role="tablist">
+                    <li><a class="active" data-toggle="tab" href="#dtail">Chi tiết sản phẩm</a></li>
+                    <li><a data-toggle="tab" href="#review">Đánh giá:{{item.luotBinhLuan}}</a></li>
+                </ul>
+                <!-- Product Thumbnail Tab Content Start -->
+                <div class="tab-content thumb-content border-default">
+                    <div id="dtail" class="tab-pane fade show active">
+                        <p>{{item.moTa}}</p>
+                    </div>
+                    <div id="review" class="tab-pane fade">
+                        <!-- Reviews Start -->
+                        <div class="review border-default universal-padding">
+                            <div class="group-title">
+                                <h2>customer review</h2>
+                            </div>
+                            <h4 class="review-mini-title">Truemart</h4>
+                            <ul class="review-list">
+                                <!-- Single Review List Start -->
+                                <li>
+                                    <span>Quality</span>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <label>Truemart</label>
+                                </li>
+                                <!-- Single Review List End -->
+                                <!-- Single Review List Start -->
+                                <li>
+                                    <span>price</span>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <label>Review by <a href="https://themeforest.net/user/hastech">Truemart</a></label>
+                                </li>
+                                <!-- Single Review List End -->
+                                <!-- Single Review List Start -->
+                                <li>
+                                    <span>value</span>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <label>Posted on 7/20/18</label>
+                                </li>
+                                <!-- Single Review List End -->
+                            </ul>
+                        </div>
+                        <!-- Reviews End -->
+                        <!-- Reviews Start -->
+                        <div class="review border-default universal-padding mt-30">
+                            <h2 class="review-title mb-30">You're reviewing: <br><span>Faded Short Sleeves T-shirt</span></h2>
+                            <p class="review-mini-title">your rating</p>
+                            <ul class="review-list">
+                                <!-- Single Review List Start -->
+                                <li>
+                                    <span>Quality</span>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </li>
+                                <!-- Single Review List End -->
+                                <!-- Single Review List Start -->
+                                <li>
+                                    <span>price</span>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </li>
+                                <!-- Single Review List End -->
+                                <!-- Single Review List Start -->
+                                <li>
+                                    <span>value</span>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </li>
+                                <!-- Single Review List End -->
+                            </ul>
+                            <!-- Reviews Field Start -->
+                            <div class="riview-field mt-40">
+                                <form autocomplete="off" action="#">
+                                    <div class="form-group">
+                                        <label class="req" for="sure-name">Nickname</label>
+                                        <input type="text" class="form-control" id="sure-name" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="req" for="subject">Summary</label>
+                                        <input type="text" class="form-control" id="subject" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="req" for="comments">Review</label>
+                                        <textarea class="form-control" rows="5" id="comments" required="required"></textarea>
+                                    </div>
+                                    <button type="submit" class="customer-btn">Submit Review</button>
+                                </form>
+                            </div>
+                            <!-- Reviews Field Start -->
+                        </div>
+                        <!-- Reviews End -->
+                    </div>
+                </div>
+                <!-- Product Thumbnail Tab Content End -->
+            </div>
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>
+<!-- Product Thumbnail Description End -->
+<!-- Realted Products Start Here -->
+<div class="hot-deal-products off-white-bg pt-100 pb-90 pt-sm-60 pb-sm-50">
+    <div class="container">
+       <!-- Product Title Start -->
+       <div class="post-title pb-30">
+           <h2>Sản phẩm khác</h2>
+       </div>
+       <!-- Product Title End -->
+        <!-- Hot Deal Product Activation Start -->
+        <div class="hot-deal-active owl-carousel">
+                   
+             <!-- Single Product Start -->
+            <div class="single-product" *ngFor="let itemsp of datasp">
+                <!-- Product Image Start -->
+                <div class="pro-img">
+                    <a href="product.html">
+                        <img class="primary-img" src="{{itemsp.hinhAnh}}" alt="single-product">
+                        
+                    </a>
+                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                </div>
+                <!-- Product Image End -->
+                <!-- Product Content Start -->
+                <div class="pro-content">
+                    <div class="pro-info">
+                        <h4><a href="product.html">{{itemsp.tenSp}}</a></h4>
+                        <p><span class="price">{{itemsp.dongia}}</span></p>
+                    </div>
+                    <div class="pro-actions">
+                        <div class="actions-primary">
+                            <a (click)="themGioHang(itemsp)" title="Add to Cart"> + THêm giỏ hàng</a>
+                        </div>
+                       
+                    </div>
+                </div>
+                <!-- Product Content End -->
+            </div>
+            <!-- Single Product End -->
+        </div>                
+        <!-- Hot Deal Product Active End -->
 
-    <!--=====  End of Related product slider  ======-->
-
-    <!--=============================================
-	=            Upsell Product slider         =
-	=============================================-->
-
-    
-
-    <!--=====  End of Upsell product slider  ======-->
-
-    <!--=============================================
-	=            Footer         =
-	=============================================-->
+    </div>
+    <!-- Container End -->
+</div>
+<!-- Realated Products End Here -->

@@ -18,4 +18,8 @@ export class SanphamService {
     const aipURL='http://localhost:21145/api/sanpham/get-all-item-id/'+masp;
     return this._http.get<SanPham[]>(aipURL).pipe();
   }
+  getsplienquan(maLoaiSp?:string){
+    const aipURL='http://localhost:21145/api/sanpham/get-sp-lienquan/'+maLoaiSp;
+    return this._http.get<SanPham[]>(aipURL).pipe();
+  }
 }

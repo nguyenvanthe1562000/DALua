@@ -6,7 +6,7 @@ import { SanPham } from 'src/app/core/Model/sanpham.model';
 import { SanphamService } from 'src/app/core/service/sanpham.service';
 import { TinTuc } from 'src/app/core/Model/tintuc.model';
 import{ TintucService} from 'src/app/core/service/tintuc.servive';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -39,6 +39,7 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
 getsp(){
 this.spservice.getallsp().subscribe((res:any)=>{
   this.datasp=res;
+console.log(res)
 })
 
 }

@@ -6,13 +6,23 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 import { BlogComponent } from './blog/blog.component';
 import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { ProductListComponent } from './product-list/product-list.component';
+
+import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent],
+  declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent, ProductListComponent, DateVNPipe],
   imports: [
     CommonModule,
+    NgbModule,
+    NgbPaginationModule,
+
     RouterModule,
     RouterModule.forChild([
       {
@@ -24,13 +34,20 @@ import { ContactComponent } from './contact/contact.component';
         component: HomeComponent
       },
       {
-
+        path: 'product-list/:id',
+        component: ProductListComponent
+      },
+      {
         path: 'product-detail/:id',
         component: ProductdetailComponent
       },
       {
         path: 'blog',
         component: BlogComponent
+      },
+      {
+        path: 'blog-detail/:id',
+        component: BlogDetailComponent
       },
       {
         path: 'cart',
@@ -41,6 +58,9 @@ import { ContactComponent } from './contact/contact.component';
         component: ContactComponent
       },
     ])
+  ],
+  exports: [
+    DateVNPipe
   ],
 })
 export class PagesModule { }

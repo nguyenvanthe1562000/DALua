@@ -103,6 +103,7 @@ namespace API
         {
             services.AddCors();
             services.AddControllers();
+<<<<<<< HEAD
             services.AddSwaggerGen(Configuration);
             services.AddSingleton<ILoginAdminRepository, LoginAdminRepository>();
             services.AddSingleton<IDatabaseHelper, DatabaseHelper>();
@@ -111,6 +112,13 @@ namespace API
             //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuanLyBanDoGiaDung_API", Version = "v1" });
             //});
 
+=======
+            services.AddSwaggerGen(c =>
+            {
+               c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuanLyBanDoGiaDung_API", Version = "v1" });
+            });
+            
+>>>>>>> origin/CuSon
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -120,7 +128,11 @@ namespace API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
+<<<<<<< HEAD
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
+=======
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "QuanLyBanDoGiaDung_API v1"));
+>>>>>>> origin/CuSon
             }
             app.UseCors(x => x
                         .AllowAnyOrigin()

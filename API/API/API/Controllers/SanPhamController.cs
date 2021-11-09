@@ -27,7 +27,8 @@ namespace API.Controllers
         {
             try
             {
-                var result = db.SanPhams.ToList();
+                var result = db.SanPhams.OrderByDescending(o => o.MaSp).Take(10).ToList();
+
                 return Ok(result);
             }
             catch (Exception ex)
@@ -35,7 +36,21 @@ namespace API.Controllers
                 return Ok("Err");
             }
         }
+        [Route("get-sp-lienquan/{maLoaiSp}")]
+        [HttpGet]
+        public IActionResult GetSpLienQuan(string maLoaiSp)
+        {
+            try
+            {
+                var result = db.SanPhams.Where(x=>x.MaLoaiSp==maLoaiSp).OrderByDescending(o => o.MaSp).Take(5).ToList();
 
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Ok("Err");
+            }
+        }
         [Route("get-all-id")]
         [HttpGet]
         public IActionResult GetAllId()
@@ -107,35 +122,35 @@ namespace API.Controllers
                 return Ok("Err");
             }
         }
-        [Route("get-all-item-id/{id}")]
-        [HttpGet]
-        public IActionResult GetitemID(string id)
-        {
-            try
-            {
-                var result = (from sp in db.SanPhams
-                              where sp.MaLoaiSp == id
-                              select new
-                              {
-                                  sp.MaSp,
-                                  sp.TenSp,
-                                  sp.MaLoaiSp,
-                                  sp.DonVi,
-                                  sp.MoTa,
-                                  sp.HinhAnh,
-                                  sp.SoLuongTon,
-                                  sp.LuotXem,
-                                  sp.LuotBinhLuan,
-                                  sp.SoLanMua,
-                                  sp.Dongia
-                              }).ToList();
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return Ok("Err");
-            }
-        }
+        //[Route("get-all-item-id/{id}")]
+        //[HttpGet]
+        //public IActionResult GetitemID(string id)
+        //{
+        //    try
+        //    {
+        //        var result = (from sp in db.SanPhams
+        //                      where sp.MaLoaiSp == id
+        //                      select new
+        //                      {
+        //                          sp.MaSp,
+        //                          sp.TenSp,
+        //                          sp.MaLoaiSp,
+        //                          sp.DonVi,
+        //                          sp.MoTa,
+        //                          sp.HinhAnh,
+        //                          sp.SoLuongTon,
+        //                          sp.LuotXem,
+        //                          sp.LuotBinhLuan,
+        //                          sp.SoLanMua,
+        //                          sp.Dongia
+        //                      }).ToList();
+        //        return Ok(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Ok("Err");
+        //    }
+        //}
         //get 1 sản phẩm
         [Route("get-by-id/{id}")]
         [HttpGet]
@@ -290,7 +305,8 @@ namespace API.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        //tìm kiếm.
+        
+        // Phân trang
         [Route("get-all-paginate")]
         [HttpPost]
         public IActionResult GetAllPaginate([FromBody] Dictionary<string, object> formData)
@@ -315,6 +331,46 @@ namespace API.Controllers
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        [Route("get-all-item-id/{id}")]
+        [HttpPost]
+        public IActionResult GetitemID([FromBody] Dictionary<string, object> formData, string id)
+        {
+            try
+            {
+                var page = int.Parse(formData["page"].ToString());
+                var pageSize = int.Parse(formData["pageSize"].ToString());
+                var result1 = (from sp in db.SanPhams
+                              where sp.MaLoaiSp == id
+                              select new
+                              {
+                                  sp.MaSp,
+                                  sp.TenSp,
+                                  sp.MaLoaiSp,
+                                  sp.DonVi,
+                                  sp.MoTa,
+                                  sp.HinhAnh,
+                                  sp.SoLuongTon,
+                                  sp.LuotXem,
+                                  sp.LuotBinhLuan,
+                                  sp.SoLanMua,
+                                  sp.Dongia
+                              }).ToList();
+                long total = result1.Count();
+                var result2 = result1.Skip(pageSize * (page - 1)).Take(pageSize).ToList();
+                return Ok(new KQ
+                {
+                    page = page,
+                    total = total,
+                    pageSize = pageSize,
+                    data = result2
+                });
+            }
+            catch (Exception ex)
+            {
+                return Ok("Err");
             }
         }
     }

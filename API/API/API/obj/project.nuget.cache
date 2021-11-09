@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "jccToCe+QjMEkaqOWRRe2yDGnL9/4CVw4mI8Tt4NKHA57BNCBnTgZsM/4hOss/xoRr4r4/motCUfnubYdpMG4g==",
+=======
+  "dgSpecHash": "vtPVtaKA0eeluO5k+ooKdaUqxPNag1Q10yBIvawOg0ZaiuPpowYwm3LEkb4PHUDoRChpopPWPWe7LWMNYnjj4Q==",
+>>>>>>> origin/CuSon
   "success": true,
   "projectFilePath": "C:\\Users\\nguye\\source\\repos\\DALua\\API\\API\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -37,7 +41,10 @@
     "C:\\Users\\nguye\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+<<<<<<< HEAD
     "C:\\Users\\nguye\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+=======
+>>>>>>> origin/CuSon
     "C:\\Users\\nguye\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

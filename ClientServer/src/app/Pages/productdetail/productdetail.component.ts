@@ -1,19 +1,27 @@
-import { AfterViewInit, Component,Injector, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BaseComponent } from 'src/app/core/base-component';
 import { SanPham } from 'src/app/core/Model/sanpham.model';
 import { SanphamService } from 'src/app/core/service/sanpham.service';
-
+interface Cart {
+  maSp?: string;
+  tenSp?: string;
+  hinhAnh?: string;
+  dongia?: number;
+  soluong: number
+}
 @Component({
   selector: 'app-productdetail',
   templateUrl: './productdetail.component.html',
   styleUrls: ['./productdetail.component.css']
 })
-export class ProductdetailComponent extends BaseComponent implements OnInit,  AfterViewInit  {
-  public item:any;
-  public id:any;
-  datasp?:SanPham[]=[];
-  constructor(injector: Injector, private route: ActivatedRoute,private spservice:SanphamService) { 
+
+export class ProductdetailComponent extends BaseComponent implements OnInit, AfterViewInit {
+  public item: any;
+  public id: any;
+  datasp?: SanPham[] = [];
+  dataspLienQuan?: SanPham[] = [];
+  constructor(injector: Injector, private route: ActivatedRoute, private spservice: SanphamService) {
     super(injector);
   }
   ngOnInit(): void {
@@ -29,17 +37,56 @@ export class ProductdetailComponent extends BaseComponent implements OnInit,  Af
       });
     });
     this.getsp();
-    
-  }
-  
-  getsp(){
-    this.spservice.getallsp().subscribe((res:any)=>{
-      this.datasp=res;
-    })
-    
-    }
+    this.getSpLienQuan();
 
-  ngAfterViewInit() { 
-    this.loadScripts(); 
-   }
+  }
+  getSpLienQuan() {
+    this.spservice.getsplienquan(this.item.maLoaiSp).subscribe((res: any) => {
+      this.dataspLienQuan = res;
+    });
+  }
+  getsp() {
+    this.spservice.getallsp().subscribe((res: any) => {
+      this.datasp = res;
+    })
+
+  }
+  themGioHang(sanpham: any) {
+    var Cart = localStorage.getItem("cart");
+
+    if (Cart) {
+      var ListCart: Cart[] = JSON.parse(Cart);
+      var itemIndex = ListCart.findIndex(item => item.maSp == sanpham.maSp);
+      if (itemIndex != -1) {
+        ListCart[itemIndex].soluong += 1;
+      }
+      else {
+        var cart: Cart = {
+          maSp: sanpham.maSp,
+          tenSp: sanpham.tenSp,
+          hinhAnh: sanpham.hinhAnh,
+          dongia: sanpham.dongia,
+          soluong: 1
+        };
+        ListCart.push(cart);
+      }
+      window.localStorage.setItem("cart", JSON.stringify(ListCart));
+
+    }
+    else {
+      var ListCart: Cart[] = [];
+      var cart: Cart = {
+        maSp: sanpham.maSp,
+        tenSp: sanpham.tenSp,
+        hinhAnh: sanpham.hinhAnh,
+        dongia: sanpham.dongia,
+        soluong: 1
+      };
+      ListCart.push(cart);
+      window.localStorage.setItem("cart", JSON.stringify(ListCart));
+    }
+  }
+  ngAfterViewInit() {
+    this.loadScripts();
+  }
 }
