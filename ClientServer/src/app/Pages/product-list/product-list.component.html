@@ -81,8 +81,13 @@
                                             <!-- Product Image Start -->
                                             <div class="pro-img">
                                                 <a href="product.html">
+<<<<<<< HEAD
                                                     <img class="primary-img" src="/ClientServer/src/assets/images/{{item.hinhAnh}}" alt="single-product">
                                                     
+=======
+                                                    <img class="primary-img" src="assets/images/{{item.hinhAnh}}" alt="single-product">
+                                                   
+>>>>>>> 2b3d264bbcd7099cf70c5f4a15c82c7467decb1f
                                                 </a>
                                                 <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                                             </div>
@@ -121,7 +126,7 @@
                                         <div class="col-lg-4 col-md-5 col-sm-12">
                                             <div class="pro-img">
                                                 <a href="product.html">
-                                                    <img class="primary-img" src="/ClientServer/src/assets/images/{{itemsp.hinhAnh}}" alt="single-product">
+                                                    <img class="primary-img" src="assets/images/{{itemsp.hinhAnh}}" alt="single-product">
                                                     
                                                 </a>
                                                 <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
@@ -154,12 +159,20 @@
                                 
                             </div>
                             <!-- #list view End -->
+<<<<<<< HEAD
                             <div class="pro-pagination">
+<<<<<<< HEAD
                                 <ngb-pagination [collectionSize]="pageSize"  [pageSize]="pageSize" [(page)]="page" [maxSize]="5" [rotate]="true"  ></ngb-pagination>
                             </div>
                             <!-- <div class="mt-5" style="position: relative;margin-left: 40%;">
                                 <ngb-pagination [collectionSize]="totalItems" [pageSize]="pageSize" [(page)]="page" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
                             </div> -->
+=======
+                                <!-- <ngb-pagination [collectionSize]="totalItems" [pageSize]="pageSize" [(page)]="page" [maxSize]="10" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>                            </div> -->
+=======
+                            <ngb-pagination [collectionSize]="totalItems" [pageSize]="pageSize" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+>>>>>>> 2b20ea6288639454ca766e9a9cb35997af2d66d6
+>>>>>>> 2b3d264bbcd7099cf70c5f4a15c82c7467decb1f
                             <!-- Product Pagination Info -->
                         </div>
                         <!-- Grid & List Main Area End -->
