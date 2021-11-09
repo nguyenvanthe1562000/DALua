@@ -5520,23 +5520,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Test User\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\nguye\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ĐỒ ÁN 5\\LỤA\\API\\API\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\nguye\\source\\repos\\DALua\\API\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\ĐỒ ÁN 5\\LỤA\\API\\API\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Test User\\.nuget\\packages\\",
-      "outputPath": "D:\\ĐỒ ÁN 5\\LỤA\\API\\API\\API\\obj\\",
+      "projectPath": "C:\\Users\\nguye\\source\\repos\\DALua\\API\\API\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nguye\\source\\repos\\DALua\\API\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Test User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5605,7 +5601,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

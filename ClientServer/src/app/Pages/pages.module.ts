@@ -8,9 +8,14 @@ import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
+
+import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -20,6 +25,9 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     NgbPaginationModule,
     CommonModule,
+    NgbModule,
+    NgbPaginationModule,
+
     RouterModule,
     RouterModule.forChild([
       {

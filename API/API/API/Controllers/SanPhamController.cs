@@ -323,7 +323,7 @@ namespace API.Controllers
         }
 
         [Route("get-all-item-id/{id}")]
-        [HttpGet]
+        [HttpPost]
         public IActionResult GetitemID([FromBody] Dictionary<string, object> formData, string id)
         {
             try

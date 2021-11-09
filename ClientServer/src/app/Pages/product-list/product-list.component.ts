@@ -33,23 +33,25 @@ export class ProductListComponent extends BaseComponent implements OnInit {
     window.scroll(0,0);
     this.route.params.subscribe(params => {
       let id = params['id'];
-      this._api.post('/api/SanPham/get-all-item-id',{page: this.page, pageSize: this.pageSize, maloai: id}).takeUntil(this.unsubscribe).subscribe(res => {
+debugger;
+      this._api.post('/api/SanPham/get-all-item-id/'+id,{page: this.page, pageSize: this.pageSize, maloai: id}).takeUntil(this.unsubscribe).subscribe(res => {
         this.list_item = res.data;
         this.totalItems = res.total;
         setTimeout(() => {
           this.loadScripts();
         });
-      });
+      },err=>{console.log(err); });
     });
   }
 
   loadPage(page) { 
     this._route.params.subscribe(params => {
       let id = params['id'];
-      this._api.post('/api/SanPham/get-all-item-id', { page: page, pageSize: this.pageSize, maloai: id}).takeUntil(this.unsubscribe).subscribe(res => {
+debugger;
+      this._api.post('/api/SanPham/get-all-item-id/'+id, { page: page, pageSize: this.pageSize, maloai: id}).takeUntil(this.unsubscribe).subscribe(res => {
         this.list_item = res.data;
         this.totalItems = res.total;
-        }, err => { });       
+        }, err => { console.log(err)});       
    });   
   }
   themGioHang(sanpham: any) {

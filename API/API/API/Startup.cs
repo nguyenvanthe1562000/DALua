@@ -100,10 +100,10 @@ namespace API
         {
             services.AddCors();
             services.AddControllers();
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuanLyBanDoGiaDung_API", Version = "v1" });
-            //});
+            services.AddSwaggerGen(c =>
+            {
+               c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuanLyBanDoGiaDung_API", Version = "v1" });
+            });
             
         }
 
@@ -113,8 +113,8 @@ namespace API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseSwagger();
-                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "QuanLyBanDoGiaDung_API v1"));
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "QuanLyBanDoGiaDung_API v1"));
             }
             app.UseCors(x => x
                         .AllowAnyOrigin()
