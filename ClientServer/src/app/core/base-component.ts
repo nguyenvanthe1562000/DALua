@@ -18,6 +18,8 @@ export class BaseComponent {
    public loadScripts() {
       this.renderExternalScript('assets/js/main.js').onload = () => {
       }
+      this.renderExternalScript('assets/js/ajax-mail.js.js').onload = () => {
+      }
       // this.renderExternalScript('assets/js/ajax-mail.js').onload = () => {
       // }
    }

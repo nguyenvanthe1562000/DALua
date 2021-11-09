@@ -4,7 +4,7 @@ $(function() {
 	var form = $('#contact-form');
 
 	// Get the messages div.
-	var formMessages = $('.form-messege');
+	var formMessages = $('.form-message');
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
@@ -29,7 +29,7 @@ $(function() {
 			$(formMessages).text(response);
 
 			// Clear the form.
-			$('#contact-form input,#contact-form textarea').val('');
+			$('#contact-form input[type="text"],#contact-form input[type="email"],#contact-form textarea').val('');
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'error' class.

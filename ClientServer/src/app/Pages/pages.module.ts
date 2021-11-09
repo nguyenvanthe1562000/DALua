@@ -9,11 +9,16 @@ import { ContactComponent } from './contact/contact.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [HomeComponent, ProductdetailComponent, BlogComponent, CartComponent, ContactComponent, BlogDetailComponent, ProductListComponent, DateVNPipe],
   imports: [
+    NgModule,
+    NgbModule,
+    NgbPaginationModule,
     CommonModule,
     RouterModule,
     RouterModule.forChild([
@@ -52,7 +57,8 @@ import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
     ])
   ],
   exports: [
-    DateVNPipe
+    DateVNPipe,
+   
   ],
 })
 export class PagesModule { }
