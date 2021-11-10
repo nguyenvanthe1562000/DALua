@@ -13,8 +13,7 @@ import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
