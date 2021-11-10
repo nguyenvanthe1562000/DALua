@@ -29,10 +29,12 @@ namespace API.Controllers
 
                 var reCT = (from ch in db.CtdonDatHangs join it in db.SanPhams on ch.MaSp equals it.MaSp select new { ch.MaDonHang, ch.MaCtdonDatHang, ch.MaSp, it.TenSp, ch.SoLuong, it.Dongia }).ToList();
                 var result = (from hd in db.DonDatHangs
+                              join kh in db.KhachHangs on hd.MaKh equals kh.MaKh
                               select new
                               {
                                   hd.MaDonHang,
                                   hd.MaKh,
+                                  kh.TenKh,
                                   hd.DiaChiNhan,
                                   hd.Sdtnhan,
                                   hd.TinhTrang,
@@ -40,7 +42,6 @@ namespace API.Controllers
                                   hd.NgayDat,
                                   hd.NgayGiao,
                                   cthoaDons = reCT
-
                               }).ToList();
                 return Ok(result);
             }
@@ -50,6 +51,77 @@ namespace API.Controllers
             }
         }
 
+        [Route("create")]
+        [HttpPost]
+        public async Task<IActionResult> DatHang([FromBody] DonDatHangDTO hoaDonDTO)
+        {
+            try
+            {
+                DonDatHang donDatHang = new DonDatHang()
+                {
+                    MaDonHang = Guid.NewGuid().ToString(),
+                    DiaChiNhan = hoaDonDTO.DiaChiNhan,
+                    Sdtnhan = hoaDonDTO.Sdtnhan,
+                    TinhTrang = false,
+                    ThanhTien = hoaDonDTO.ThanhTien,
+                    NgayDat = DateTime.Now,
+                    NgayGiao = DateTime.Now.AddDays(4)
+                };
+                List<CtdonDatHang> ctdonDatHangs = new List<CtdonDatHang>();
+                foreach (var item in hoaDonDTO.HoaDonChiTietDTO)
+                {
+                    CtdonDatHang ctdonDatHang = new CtdonDatHang()
+                    {
+                        MaCtdonDatHang = Guid.NewGuid().ToString(),
+                        MaDonHang = donDatHang.MaDonHang,
+                        MaSp = item.MaSp,
+                        TenSp = item.TenSp,
+                        hinhAnh = item.hinhAnh,
+                        SoLuong = item.SoLuong,
+                        DonGia = item.DonGia
+                    };
+                    ctdonDatHangs.Add(ctdonDatHang);
+                }
+                donDatHang.CtdonDatHangs = ctdonDatHangs;
+                db.DonDatHangs.Add(donDatHang);
+                await db.SaveChangesAsync();
+                return Ok();
+                //return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Ok("Err");
+            }
+        }
+
+        [Route("get-by-id/{id}")]
+        [HttpGet]
+        public IActionResult GetById(string id)
+        {
+            try
+            {
+                // var result = db.ChiTietHoaDons.Where(s => s.MaHoaDon == id).Select(a=>new { a.ItemId,a.Item.ItemName, a.SoLuong}).ToList();
+                // return Ok(result);
+                var result = (from ch in db.CtdonDatHangs
+                              join it in db.SanPhams on ch.MaSp equals it.MaSp
+                              where ch.MaDonHang == id
+                              select new
+                              {
+                                  it.MaSp,
+                                  it.TenSp,
+                                  it.Dongia,
+                                  ch.SoLuong
+                              }).ToList();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Ok("Err");
+            }
+        }
+
+<<<<<<< HEAD
+=======
         [Route("create")]
         [HttpPost]
         public async Task<IActionResult> DatHang([FromBody] DonDatHangDTO hoaDonDTO)
@@ -109,6 +181,7 @@ namespace API.Controllers
             }
         }
 
+>>>>>>> 2b3d264bbcd7099cf70c5f4a15c82c7467decb1f
         [Route("update")]
         [HttpPost]
         public async Task<IActionResult> UpdateDonDatHang([FromBody] DonDatHang hoaDon)

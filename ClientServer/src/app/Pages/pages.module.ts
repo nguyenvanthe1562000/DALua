@@ -13,8 +13,21 @@ import { NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
+<<<<<<< HEAD
 
+=======
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+>>>>>>> fca59369011b83080d45bc9031b6231b38cea376
 
+>>>>>>> 2b3d264bbcd7099cf70c5f4a15c82c7467decb1f
+=======
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+
+>>>>>>> 2b3d264bbcd7099cf70c5f4a15c82c7467decb1f
 
 
 @NgModule({
@@ -28,6 +41,7 @@ import { DateVNPipe } from '../shared/pipe/DateVN.pipe';
     NgbPaginationModule,
 
     RouterModule,
+    NgbModule,
     RouterModule.forChild([
       {
         path: '',
